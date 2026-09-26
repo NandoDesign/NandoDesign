@@ -4,49 +4,48 @@
 
 Estudante de **Engenharia de Software** com background em **Design Gráfico**, explorando a interseção entre desenvolvimento, interfaces e experiência do usuário.
 
-Meu foco é construir produtos digitais combinando **código bem estruturado, pensamento visual e atenção à experiência**.
+Meu foco é construir produtos digitais com uma combinação de **código bem estruturado, pensamento visual e atenção à experiência**.
 
 ---
 
 ## `01` · Stack
 
 ### Front-end
-
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="35" height="35" alt="HTML5" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="HTML5" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="35" height="35" alt="CSS3" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="CSS3" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="35" height="35" alt="JavaScript" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="JavaScript" />
 </p>
 
 `HTML5` · `CSS3` · `JavaScript (ES6+)`
 
 ### Design & Product
-
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="35" height="35" alt="Figma" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="Figma" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" width="35" height="35" alt="Adobe Illustrator" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe Illustrator" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" width="35" height="35" alt="Adobe Photoshop" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe Photoshop" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" width="35" height="35" alt="Adobe Premiere Pro" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe Premiere Pro" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" width="35" height="35" alt="Adobe After Effects" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe After Effects" />
 </p>
 
 `Figma` · `Illustrator` · `Photoshop` · `Premiere Pro` · `After Effects`
 
 ### Workflow
-
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="35" height="35" alt="Git" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="Git" />
   &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="35" height="35" alt="GitHub" />
+  <img src="https://jsdelivr.net" width="35" height="35" alt="GitHub" />
+  &nbsp;&nbsp;
+  <img src="https://jsdelivr.net" width="35" height="35" alt="VS Code" />
 </p>
 
-`Git` · `GitHub` · `Markdown`
+`Git` · `GitHub` · `VS Code`
 
 ---
 
@@ -62,3 +61,70 @@ Software Engineering
 User Experience
         ↓
 Digital Products
+```
+
+Atualmente estou aprofundando conhecimentos em:
+* Engenharia de Software & Arquitetura Clean
+* Organização de interfaces, UI/UX e Design de Produto
+* Versionamento semântico com Git/GitHub e desenvolvimento focado em projetos
+
+---
+
+## `03` · Selected Work
+
+### 📑 [TP-2 — Curriculum Vitae](https://github.com)
+**HTML · CSS · Web Design**
+Projeto focado em desenvolvimento web fundamental, combinando estrutura HTML semântica, estilização CSS responsiva e organização visual de informações profissionais.
+
+### 📁 [TP-1 — Web Fundamentals](https://github.com)
+**Markdown · GitHub · Web Fundamentals**
+Projeto acadêmico voltado aos fundamentos do ecossistema de desenvolvimento e utilização do GitHub, incluindo documentação técnica avançada em Markdown.
+
+---
+
+## `04` · Design Approach
+
+> **"Design defines the experience. Code makes it real."**
+
+Procuro trabalhar conectando dois universos complementares:
+
+* **Design:** Hierarquia visual, composição, tipografia, motion design, identidade de marca e UX.
+* **Engineering:** Estrutura de código limpa, componentização, manutenibilidade, versionamento e performance.
+
+O objetivo nunca é apenas fazer uma interface bonita — é fazer com que **ela funcione de forma impecável para quem a utiliza**.
+
+---
+
+## `05` · Education
+
+* **Bacharelado em Engenharia de Software** — PUC Minas *(2026 — 2029)*
+* **Design Gráfico & Motion** — Escola ZION *(Em andamento)*
+
+---
+
+## `06` · Let's Connect
+
+Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologia, design e produtos digitais.
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/nandodesign/" target="_blank">
+    <img src="https://shields.io" alt="LinkedIn" />
+  </a>
+  &nbsp;
+  <a href="https://www.behance.net/NandoDesign-real" target="_blank">
+    <img src="https://shields.io" alt="Behance" />
+  </a>
+  &nbsp;
+  <a href="https://wa.me" target="_blank">
+    <img src="https://shields.io" alt="WhatsApp" />
+  </a>
+  &nbsp;
+  <a href="mailto:nandopv12@gmail.com">
+    <img src="https://shields.io" alt="Email" />
+  </a>
+</p>
+
+---
+<p align="right">
+  <sub>Building at the intersection of <strong>code × design × experience</strong>.</sub>
+</p>
