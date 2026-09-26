@@ -12,40 +12,34 @@ Meu foco é construir produtos digitais com uma combinação de **código bem es
 
 ### Front-end
 <p align="left">
-  <img src="https://jsdelivr.net" width="35" height="35" alt="HTML5" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="CSS3" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="JavaScript" />
+  <img src="https://shields.io" alt="HTML5" />
+  &nbsp;
+  <img src="https://shields.io" alt="CSS3" />
+  &nbsp;
+  <img src="https://shields.io" alt="JavaScript" />
 </p>
-
-`HTML5` · `CSS3` · `JavaScript (ES6+)`
 
 ### Design & Product
 <p align="left">
-  <img src="https://jsdelivr.net" width="35" height="35" alt="Figma" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe Illustrator" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe Photoshop" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe Premiere Pro" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="Adobe After Effects" />
+  <img src="https://shields.io" alt="Figma" />
+  &nbsp;
+  <img src="https://shields.io" alt="Illustrator" />
+  &nbsp;
+  <img src="https://shields.io" alt="Photoshop" />
+  &nbsp;
+  <img src="https://shields.io" alt="Premiere Pro" />
+  &nbsp;
+  <img src="https://shields.io" alt="After Effects" />
 </p>
-
-`Figma` · `Illustrator` · `Photoshop` · `Premiere Pro` · `After Effects`
 
 ### Workflow
 <p align="left">
-  <img src="https://jsdelivr.net" width="35" height="35" alt="Git" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="GitHub" />
-  &nbsp;&nbsp;
-  <img src="https://jsdelivr.net" width="35" height="35" alt="VS Code" />
+  <img src="https://shields.io" alt="Git" />
+  &nbsp;
+  <img src="https://shields.io" alt="GitHub" />
+  &nbsp;
+  <img src="https://shields.io" alt="VS Code" />
 </p>
-
-`Git` · `GitHub` · `VS Code`
 
 ---
 
@@ -107,11 +101,11 @@ O objetivo nunca é apenas fazer uma interface bonita — é fazer com que **ela
 Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologia, design e produtos digitais.
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/nandodesign/" target="_blank">
+  <a href="https://linkedin.com" target="_blank">
     <img src="https://shields.io" alt="LinkedIn" />
   </a>
   &nbsp;
-  <a href="https://www.behance.net/NandoDesign-real" target="_blank">
+  <a href="https://behance.net" target="_blank">
     <img src="https://shields.io" alt="Behance" />
   </a>
   &nbsp;
