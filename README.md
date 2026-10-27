@@ -1,4 +1,4 @@
-# Fernando Pereira
+[# Fernando Pereira
 
 > **Software Engineering × Product Design — transformando ideias em interfaces que funcionam, comunicam e fazem sentido.**
 
@@ -122,3 +122,4 @@ Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologi
 <p align="right">
   <sub>Building at the intersection of <strong>code × design × experience</strong>.</sub>
 </p>
+](https://rahuldkjain.github.io/github-profile-readme-generator/)
