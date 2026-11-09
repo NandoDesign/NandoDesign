@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="288" viewBox="0 0 1200 288" role="img" aria-label="04-formacao.svg">
+<rect x="1" y="1" width="1198" height="286" rx="20" fill="#FFFFFF" stroke="#ECECEC" stroke-width="2"/>
+<rect x="40" y="30" width="66" height="40" rx="20" fill="#0057FF"/>
+<text x="73" y="56" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="1" fill="#FFFFFF">04</text>
+<text x="128" y="59" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="32" font-weight="800" letter-spacing="-0.5" fill="#191919">Formação</text>
+<text x="128" y="86" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" fill="#707070">Trajetória acadêmica</text>
+<rect x="128" y="98" width="0" height="4" rx="2" fill="#0057FF">
+  <animate attributeName="width" from="0" to="120" dur="0.9s" fill="freeze"/>
+</rect>
+<line x1="0" y1="112" x2="1200" y2="112" stroke="#ECECEC" stroke-width="2"/>
+<text x="40" y="156" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#191919">Bacharelado em Engenharia de Software</text>
+<text x="40" y="180" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" fill="#707070">PUC Minas</text>
+<rect x="990" y="140" width="170" height="34" rx="17" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="1075" y="162" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#191919">2026 — 2029</text>
+<line x1="40" y1="192" x2="1160" y2="192" stroke="#ECECEC" stroke-width="2"/>
+<text x="40" y="228" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#191919">Design Gráfico &amp; Motion</text>
+<text x="40" y="252" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" fill="#707070">Escola ZION</text>
+<rect x="990" y="212" width="170" height="34" rx="17" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="1075" y="234" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#191919">Em andamento</text>
+
+</svg>

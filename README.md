@@ -2,21 +2,15 @@
 
 <img src="assets/banner.svg" alt="Fernando Pereira — Software Engineering × Product Design" width="100%" />
 
-<br/>
-
-**[Trabalhos](#trabalhos)** &nbsp;·&nbsp; **[Stack](#stack)** &nbsp;·&nbsp; **[Foco](#foco)** &nbsp;·&nbsp; **[Formação](#formação)** &nbsp;·&nbsp; **[Contato](#contato)**
-
 </div>
 
 <br/>
 
-Estudante de **Engenharia de Software** com background em **Design Gráfico**, explorando a interseção entre desenvolvimento, interfaces e experiência do usuário.
+<img src="assets/cards/00-sobre.svg" alt="Sobre" width="100%" />
 
-Meu foco é construir produtos digitais combinando **código bem estruturado**, **pensamento visual** e **atenção à experiência**.
+<br/>
 
----
-
-## Trabalhos
+<img src="assets/cards/01-trabalhos.svg" alt="Trabalhos" width="100%" />
 
 <table align="center">
   <tr>
@@ -50,71 +44,21 @@ Meu foco é construir produtos digitais combinando **código bem estruturado**, 
   </a>
 </p>
 
----
+<br/>
 
-## Stack
+<img src="assets/cards/02-stack.svg" alt="Stack" width="100%" />
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <b>Front-end</b><br/><br/>
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
-    </td>
-    <td width="33%" valign="top">
-      <b>Design &amp; Produto</b><br/><br/>
-      <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" />
-      <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" alt="Illustrator" />
-      <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" alt="Photoshop" />
-      <img src="https://img.shields.io/badge/Premiere_Pro-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" alt="Premiere Pro" />
-      <img src="https://img.shields.io/badge/After_Effects-9999FF?style=flat-square&logo=adobeaftereffects&logoColor=white" alt="After Effects" />
-    </td>
-    <td width="33%" valign="top">
-      <b>Workflow</b><br/><br/>
-      <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
-      <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" />
-    </td>
-  </tr>
-</table>
+<br/>
 
----
+<img src="assets/cards/03-foco.svg" alt="Foco" width="100%" />
 
-## Foco
+<br/>
 
-```text
-Software Engineering  +  Visual Design
-              ↓
-          Interfaces
-              ↓
-       User Experience
-              ↓
-      Digital Products
-```
+<img src="assets/cards/04-formacao.svg" alt="Formação" width="100%" />
 
-* Engenharia de Software e Arquitetura Limpa
-* Organização de interfaces, UI/UX e Design de Produto
-* Versionamento com Git/GitHub e desenvolvimento orientado a projetos
+<br/>
 
-> **"Design defines the experience. Code makes it real."**
-
-Gosto de conectar dois universos complementares. **Design** cuida de hierarquia visual, composição, tipografia, motion design, identidade de marca e UX. **Engenharia** cuida de código limpo, componentização, manutenibilidade, versionamento e performance.
-
-O objetivo não é só uma interface bonita, e sim uma interface que **funcione de forma impecável para quem a utiliza**.
-
----
-
-## Formação
-
-| Curso | Instituição | Período |
-| :--- | :--- | :--- |
-| **Bacharelado em Engenharia de Software** | PUC Minas | 2026 — 2029 |
-| **Design Gráfico & Motion** | Escola ZION | Em andamento |
-
----
-
-## GitHub em números
+<img src="assets/cards/05-github.svg" alt="GitHub em números" width="100%" />
 
 <p align="center">
   <picture>
@@ -123,11 +67,9 @@ O objetivo não é só uma interface bonita, e sim uma interface que **funcione 
   </picture>
 </p>
 
----
+<br/>
 
-## Contato
-
-Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologia, design e produtos digitais.
+<img src="assets/cards/06-contato.svg" alt="Contato" width="100%" />
 
 <p align="center">
   <a href="https://www.behance.net/NandoDesign-real">
@@ -135,7 +77,7 @@ Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologi
   </a>
   &nbsp;
   <a href="mailto:nandopv12@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-191919?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <!-- LinkedIn: adicionar o link do perfil quando quiser exibir -->
 </p>
