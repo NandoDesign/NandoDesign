@@ -1,14 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="Logo NANDO DESIGN" width="180" />
-
-<br/>
-
-### Fernando Pereira
-
-**Software Engineering × Product Design**
-
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&pause=1000&color=0057FF&center=true&vCenter=true&width=640&lines=Estudante+de+Engenharia+de+Software;Background+em+Design+Gr%C3%A1fico;C%C3%B3digo+bem+estruturado+%2B+pensamento+visual;Interfaces+que+fazem+sentido+para+quem+usa" alt="Typing animation" />
+<img src="assets/banner.svg" alt="Fernando Pereira — Software Engineering × Product Design" width="100%" />
 
 <br/>
 
