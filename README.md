@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/profile.svg" alt="Perfil de Fernando Pereira — Software Engineering × Product Design" width="100%" />
+<img src="assets/profile.svg?v=2" alt="Perfil de Fernando Pereira — Software Engineering × Product Design" width="100%" />
 
 <br/>
 
