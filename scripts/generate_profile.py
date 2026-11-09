@@ -24,6 +24,8 @@ F = "Helvetica Neue, Helvetica, Arial, sans-serif"
 W = 1200
 BLUE, INK, GREY, LINE, SOFT = "#0057FF", "#191919", "#707070", "#ECECEC", "#F9F9F9"
 COVER = "#F0F0F0"  # fundo das capas de projeto no Behance
+TAN = "#A58A6E"    # tom bege do pôster do projeto "Portifólio" (estimado visualmente)
+PLATE = "#6F6F6F"  # cinza do pôster (estimado visualmente)
 TABS = ["Sobre", "Trabalhos", "Stack", "Foco", "Formação", "GitHub", "Contato"]
 PORTFOLIO_URL = "https://www.behance.net/NandoDesign-real"
 GITHUB_URL = f"https://github.com/{USER}"
@@ -128,7 +130,7 @@ def build(data, logo_b64, today):
 <rect width="{W}" height="{HERO_H}" fill="{SOFT}"/>
 <rect width="{W}" height="{HERO_H}" fill="url(#dots)"/>
 <circle cx="1010" cy="180" r="270" fill="none" stroke="{BLUE}" stroke-opacity="0.07" stroke-width="2"/>
-<circle cx="1010" cy="180" r="200" fill="none" stroke="{BLUE}" stroke-opacity="0.09" stroke-width="2" stroke-dasharray="4 10"/>
+<circle cx="1010" cy="180" r="200" fill="none" stroke="{TAN}" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="4 10"/>
 </g></g>''')
     out.append(f'''<g font-family="{F}">
 <rect x="72" y="64" width="146" height="34" rx="17" fill="{BLUE}"/>
@@ -176,7 +178,9 @@ def build(data, logo_b64, today):
         x = 40 + i * (bw + gap)
         tag_w = len(tag) * 8.2 + 28
         out.append(f'''<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="{0.1 + i*0.1:.2f}s" dur="0.5s" fill="freeze"/>
+<defs><linearGradient id="poster{i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{TAN}" stop-opacity="0.35"/><stop offset="1" stop-color="{PLATE}" stop-opacity="0.18"/></linearGradient></defs>
 <rect x="{x}" y="{cy}" width="{bw}" height="190" rx="4" fill="{COVER}"/>
+<rect x="{x}" y="{cy}" width="{bw}" height="96" rx="4" fill="url(#poster{i})"/>
 <text x="{x + 24}" y="{cy + 74}" font-family="{F}" font-size="60" font-weight="800" letter-spacing="-2" fill="{BLUE}">{num}</text>
 <text x="{x + 24}" y="{cy + 118}" font-family="{F}" font-size="18" font-weight="700" fill="{INK}">{esc(t)}</text>
 <rect x="{x + 24}" y="{cy + 134}" width="{tag_w:.0f}" height="28" rx="14" fill="#FFFFFF" stroke="{LINE}" stroke-width="2"/>

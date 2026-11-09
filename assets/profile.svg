@@ -8,7 +8,7 @@
 <rect width="1200" height="336" fill="#F9F9F9"/>
 <rect width="1200" height="336" fill="url(#dots)"/>
 <circle cx="1010" cy="180" r="270" fill="none" stroke="#0057FF" stroke-opacity="0.07" stroke-width="2"/>
-<circle cx="1010" cy="180" r="200" fill="none" stroke="#0057FF" stroke-opacity="0.09" stroke-width="2" stroke-dasharray="4 10"/>
+<circle cx="1010" cy="180" r="200" fill="none" stroke="#A58A6E" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="4 10"/>
 </g></g>
 <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
 <rect x="72" y="64" width="146" height="34" rx="17" fill="#0057FF"/>
@@ -51,19 +51,25 @@
 <text x="128" y="734" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#707070">Projetos publicados no Behance</text>
 <rect x="128" y="744" width="0" height="4" rx="2" fill="#0057FF"><animate attributeName="width" from="0" to="120" dur="0.9s" fill="freeze"/></rect>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.10s" dur="0.5s" fill="freeze"/>
+<defs><linearGradient id="poster0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A58A6E" stop-opacity="0.35"/><stop offset="1" stop-color="#6F6F6F" stop-opacity="0.18"/></linearGradient></defs>
 <rect x="40" y="780" width="360" height="190" rx="4" fill="#F0F0F0"/>
+<rect x="40" y="780" width="360" height="96" rx="4" fill="url(#poster0)"/>
 <text x="64" y="854" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="60" font-weight="800" letter-spacing="-2" fill="#0057FF">01</text>
 <text x="64" y="898" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#191919">Portfólio de desenhos à mão</text>
 <rect x="64" y="914" width="85" height="28" rx="14" fill="#FFFFFF" stroke="#ECECEC" stroke-width="2"/>
 <text x="107" y="933" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">Desenho</text></g>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.20s" dur="0.5s" fill="freeze"/>
+<defs><linearGradient id="poster1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A58A6E" stop-opacity="0.35"/><stop offset="1" stop-color="#6F6F6F" stop-opacity="0.18"/></linearGradient></defs>
 <rect x="420" y="780" width="360" height="190" rx="4" fill="#F0F0F0"/>
+<rect x="420" y="780" width="360" height="96" rx="4" fill="url(#poster1)"/>
 <text x="444" y="854" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="60" font-weight="800" letter-spacing="-2" fill="#0057FF">02</text>
 <text x="444" y="898" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#191919">Portfólio</text>
 <rect x="444" y="914" width="102" height="28" rx="14" fill="#FFFFFF" stroke="#ECECEC" stroke-width="2"/>
 <text x="495" y="933" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">Portfólio</text></g>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.30s" dur="0.5s" fill="freeze"/>
+<defs><linearGradient id="poster2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A58A6E" stop-opacity="0.35"/><stop offset="1" stop-color="#6F6F6F" stop-opacity="0.18"/></linearGradient></defs>
 <rect x="800" y="780" width="360" height="190" rx="4" fill="#F0F0F0"/>
+<rect x="800" y="780" width="360" height="96" rx="4" fill="url(#poster2)"/>
 <text x="824" y="854" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="60" font-weight="800" letter-spacing="-2" fill="#0057FF">03</text>
 <text x="824" y="898" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#191919">Saturno</text>
 <rect x="824" y="914" width="110" height="28" rx="14" fill="#FFFFFF" stroke="#ECECEC" stroke-width="2"/>
@@ -122,8 +128,8 @@
 <text x="128" y="2049" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="-0.5" fill="#191919">GitHub em números</text>
 <text x="128" y="2074" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#707070">Atividade nos últimos 12 meses</text>
 <rect x="128" y="2084" width="0" height="4" rx="2" fill="#0057FF"><animate attributeName="width" from="0" to="120" dur="0.9s" fill="freeze"/></rect>
-<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.10s" dur="0.5s" fill="freeze"/><rect x="40.0" y="2120" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="60.0" y="2148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">CONTRIBUIÇÕES NO ANO</text><text x="60.0" y="2190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">349</text></g>
-<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.18s" dur="0.5s" fill="freeze"/><rect x="324.0" y="2120" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="344.0" y="2148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">COMMITS</text><text x="344.0" y="2190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">22</text></g>
+<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.10s" dur="0.5s" fill="freeze"/><rect x="40.0" y="2120" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="60.0" y="2148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">CONTRIBUIÇÕES NO ANO</text><text x="60.0" y="2190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">350</text></g>
+<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.18s" dur="0.5s" fill="freeze"/><rect x="324.0" y="2120" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="344.0" y="2148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">COMMITS</text><text x="344.0" y="2190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">23</text></g>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.26s" dur="0.5s" fill="freeze"/><rect x="608.0" y="2120" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="628.0" y="2148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">REPOSITÓRIOS PÚBLICOS</text><text x="628.0" y="2190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">1</text></g>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.34s" dur="0.5s" fill="freeze"/><rect x="892.0" y="2120" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="912.0" y="2148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">SEGUIDORES</text><text x="912.0" y="2190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">2</text></g>
 <rect x="40" y="2240" width="14" height="14" rx="3" fill="#ECECEC"><animate attributeName="fill-opacity" from="0.35" to="1" begin="0.30s" dur="0.4s" fill="freeze"/></rect>
