@@ -4,12 +4,16 @@
 
 <br/>
 
-<a href="https://www.behance.net/NandoDesign-real">
-  <img src="https://img.shields.io/badge/Portf%C3%B3lio_completo-0057FF?style=for-the-badge&logo=behance&logoColor=white" alt="Portfólio completo no Behance" />
+<a href="https://github.com/NandoDesign">
+  <img src="assets/buttons/seguir.svg" alt="Seguir no GitHub" />
 </a>
 &nbsp;
 <a href="mailto:nandopv12@gmail.com">
-  <img src="https://img.shields.io/badge/E--mail-191919?style=for-the-badge&logo=gmail&logoColor=white" alt="E-mail" />
+  <img src="assets/buttons/mensagem.svg" alt="Enviar e-mail" />
+</a>
+&nbsp;
+<a href="https://www.behance.net/NandoDesign-real">
+  <img src="assets/buttons/portfolio.svg" alt="Ver portfólio no Behance" />
 </a>
 
 </div>

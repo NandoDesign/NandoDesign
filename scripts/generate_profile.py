@@ -23,6 +23,11 @@ LOGO = os.path.join(ROOT, "assets", "logo.png")
 F = "Helvetica Neue, Helvetica, Arial, sans-serif"
 W = 1200
 BLUE, INK, GREY, LINE, SOFT = "#0057FF", "#191919", "#707070", "#ECECEC", "#F9F9F9"
+COVER = "#F0F0F0"  # fundo das capas de projeto no Behance
+TABS = ["Sobre", "Trabalhos", "Stack", "Foco", "Formação", "GitHub", "Contato"]
+PORTFOLIO_URL = "https://www.behance.net/NandoDesign-real"
+GITHUB_URL = f"https://github.com/{USER}"
+EMAIL = "nandopv12@gmail.com"
 
 # ---------------------------------------------------------------- conteúdo
 SOBRE = [
@@ -142,6 +147,18 @@ def build(data, logo_b64, today):
     y = HERO_H
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
+    # --- abas (como as abas do Behance: cinza, ativa em preto com linha)
+    tx = 40
+    for i, t in enumerate(TABS):
+        ativa = i == 0
+        out.append(f'<text x="{tx}" y="{y + 34}" font-family="{F}" font-size="15" font-weight="600" fill="{INK if ativa else GREY}">{esc(t)}</text>')
+        tw = len(t) * 7.8
+        if ativa:
+            out.append(f'<rect x="{tx}" y="{y + 46}" width="{tw:.0f}" height="2" fill="{INK}"/>')
+        tx += tw + 36
+    y += 56
+    out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
+
     # --- 01 Sobre
     out.append(title_block(y, "01", "Sobre", "Quem sou e o que construo"))
     cy = y + 124
@@ -159,9 +176,9 @@ def build(data, logo_b64, today):
         x = 40 + i * (bw + gap)
         tag_w = len(tag) * 8.2 + 28
         out.append(f'''<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="{0.1 + i*0.1:.2f}s" dur="0.5s" fill="freeze"/>
-<rect x="{x}" y="{cy}" width="{bw}" height="190" rx="18" fill="{SOFT}" stroke="{LINE}" stroke-width="2"/>
+<rect x="{x}" y="{cy}" width="{bw}" height="190" rx="4" fill="{COVER}"/>
 <text x="{x + 24}" y="{cy + 74}" font-family="{F}" font-size="60" font-weight="800" letter-spacing="-2" fill="{BLUE}">{num}</text>
-<text x="{x + 24}" y="{cy + 118}" font-family="{F}" font-size="19" font-weight="800" fill="{INK}">{esc(t)}</text>
+<text x="{x + 24}" y="{cy + 118}" font-family="{F}" font-size="18" font-weight="700" fill="{INK}">{esc(t)}</text>
 <rect x="{x + 24}" y="{cy + 134}" width="{tag_w:.0f}" height="28" rx="14" fill="#FFFFFF" stroke="{LINE}" stroke-width="2"/>
 <text x="{x + 24 + tag_w/2:.0f}" y="{cy + 153}" text-anchor="middle" font-family="{F}" font-size="13" font-weight="700" fill="{GREY}">{esc(tag)}</text></g>''')
     y = cy + 190 + 16
@@ -280,6 +297,28 @@ def build(data, logo_b64, today):
     return head + "\n" + base + "\n" + body + "\n</svg>\n"
 
 
+def pill(label, w, fill, color, stroke=None):
+    """Botão em pílula, como 'Seguir' e 'Mensagem' no Behance."""
+    h = 48
+    st = f' stroke="{stroke}" stroke-width="1.5"' if stroke else ""
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{esc(label)}">\n'
+            f'<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="{h/2}" fill="{fill}"{st}/>\n'
+            f'<text x="{w/2}" y="{h/2 + 6}" text-anchor="middle" font-family="{F}" font-size="16" font-weight="600" fill="{color}">{esc(label)}</text>\n</svg>\n')
+
+
+def write_buttons():
+    d = os.path.join(ROOT, "assets", "buttons")
+    os.makedirs(d, exist_ok=True)
+    files = {
+        "seguir.svg": pill("Seguir no GitHub", 220, BLUE, "#FFFFFF"),
+        "mensagem.svg": pill("Enviar e-mail", 200, "#F5F8FF", BLUE, stroke="#E0EAFF"),
+        "portfolio.svg": pill("Ver portfólio no Behance", 260, BLUE, "#FFFFFF"),
+    }
+    for name, svg in files.items():
+        with open(os.path.join(d, name), "w", encoding="utf-8") as f:
+            f.write(svg)
+
+
 def main():
     data = fetch()
     logo_b64 = base64.b64encode(open(LOGO, "rb").read()).decode()
@@ -287,6 +326,7 @@ def main():
     svg = build(data, logo_b64, today)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg)
+    write_buttons()
     print("gerado:", OUT, "| contribuições:", data["contributionsCollection"]["contributionCalendar"]["totalContributions"])
 
 
