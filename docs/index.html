@@ -85,6 +85,20 @@
     .titulo-secao p { margin: 2px 0 0; color: var(--grey); font-size: 15px; }
     .sobre p { font-size: 20px; margin: 0 0 10px; max-width: 820px; }
     .sobre { border-left: 6px solid var(--ink); padding-left: 24px; }
+    .sobre-wrap { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+    .sobre-wrap .sobre { flex: 1 1 520px; }
+    .foto { position: relative; width: 230px; height: 230px; flex: 0 0 230px; }
+    .foto img {
+      position: absolute; inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px);
+      border-radius: 50%; object-fit: cover; background: var(--cover);
+    }
+    .foto .arco {
+      position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(25,25,25,.35);
+      border-left-color: transparent; border-bottom-color: transparent; transform: rotate(-40deg);
+      animation: girar 40s linear infinite;
+    }
+    .foto .arco.tan { inset: -6px; border: 2px solid var(--tan); border-top-color: transparent; border-right-color: transparent; transform: none; animation-direction: reverse; }
+    @keyframes girar { to { transform: rotate(320deg); } }
 
     /* projetos */
     .projetos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -208,8 +222,8 @@
       transition: transform .2s ease, box-shadow .2s ease;
     }
     .botao:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(25,25,25,.15); }
-    .botao.primario { background: var(--blue); color: #fff; }
-    .botao.secundario { background: var(--soft); color: var(--blue); border: 2px solid #E0EAFF; }
+    .botao.primario { background: var(--brown); color: #fff; }
+    .botao.secundario { background: #fff; color: var(--ink); border: 2px solid var(--tan); }
     .botao.escuro { background: var(--ink); color: #fff; }
 
     footer { text-align: center; color: var(--grey); font-size: 15px; padding: 40px 0 56px; border-top: 2px solid var(--line); }
@@ -267,11 +281,17 @@
   <section class="bloco" id="sobre">
     <div class="wrap">
       <div class="titulo-secao revelar"><span class="num">01</span><div><h2>Sobre</h2><p>Quem sou e o que construo</p></div></div>
-      <div class="sobre revelar">
-        <p>Estudante de Engenharia de Software com background em Design Gráfico,
-          explorando a interseção entre desenvolvimento, interfaces e experiência do usuário.</p>
-        <p>Meu foco é construir produtos digitais combinando código bem estruturado,
-          pensamento visual e atenção à experiência.</p>
+      <div class="sobre-wrap revelar">
+        <div class="sobre">
+          <p>Estudante de Engenharia de Software com background em Design Gráfico,
+            explorando a interseção entre desenvolvimento, interfaces e experiência do usuário.</p>
+          <p>Meu foco é construir produtos digitais combinando código bem estruturado,
+            pensamento visual e atenção à experiência.</p>
+        </div>
+        <div class="foto" aria-hidden="false">
+          <span class="arco"></span><span class="arco tan"></span>
+          <img src="assets/foto.jpg" alt="Foto de Fernando Pereira" />
+        </div>
       </div>
     </div>
   </section>

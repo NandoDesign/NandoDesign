@@ -169,7 +169,14 @@ def build(data, logo_b64, today):
     out.append(f'<rect x="48" y="{cy - 22}" width="6" height="{len(SOBRE) * 32 + 4}" rx="3" fill="{ACC}"/>')
     for i, t in enumerate(SOBRE):
         out.append(f'<text x="72" y="{cy + i * 32}" font-family="{F}" font-size="20" fill="{INK}">{esc(t)}</text>')
-    y = cy + len(SOBRE) * 32 + 12
+    # foto no modelo do pôster: círculo com arcos finos em volta
+    foto = base64.b64encode(open(os.path.join(ROOT, "assets", "foto.jpg"), "rb").read()).decode()
+    fx, fy, fr = 1040, cy + 100, 92
+    out.append(f'<clipPath id="foto-circ"><circle cx="{fx}" cy="{fy}" r="{fr}"/></clipPath>'
+               f'<image x="{fx - fr}" y="{fy - fr}" width="{2 * fr}" height="{2 * fr}" preserveAspectRatio="xMidYMid slice" clip-path="url(#foto-circ)" href="data:image/jpeg;base64,{foto}"/>'
+               f'<circle cx="{fx}" cy="{fy}" r="108" fill="none" stroke="{INK}" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="150 24 90 40" transform="rotate(-40 {fx} {fy})"/>'
+               f'<circle cx="{fx}" cy="{fy}" r="120" fill="none" stroke="{TAN}" stroke-width="2" stroke-dasharray="60 34 30 110" transform="rotate(110 {fx} {fy})"/>')
+    y = max(cy + len(SOBRE) * 32 + 12, fy + 130)
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
     # --- 02 Trabalhos
@@ -386,6 +393,7 @@ def write_site_data(data, repos_por_dia=None):
     with open(os.path.join(docs, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False)
     shutil.copy(LOGO, os.path.join(docs, "assets", "logo.png"))
+    shutil.copy(os.path.join(ROOT, "assets", "foto.jpg"), os.path.join(docs, "assets", "foto.jpg"))
     for n in ("01", "02", "03"):
         shutil.copy(os.path.join(ROOT, "assets", "covers", f"projeto-{n}.jpg"), os.path.join(docs, "assets", "covers", f"projeto-{n}.jpg"))
 
