@@ -97,7 +97,6 @@ O objetivo não é só uma interface bonita, e sim uma interface que **funcione 
 ## 📊 GitHub em números
 
 <p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=NandoDesign&show_icons=true&hide_border=true&theme=tokyonight" alt="Estatísticas do GitHub" />
   <img height="180" src="https://streak-stats.demolab.com?user=NandoDesign&hide_border=true&theme=tokyonight" alt="Sequência de contribuições" />
 </p>
 
