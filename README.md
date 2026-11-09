@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://nandodesign.github.io/NandoDesign/">
-  <img src="assets/profile.svg?v=3" alt="Perfil de Fernando Pereira — Software Engineering × Product Design (abrir versão interativa)" width="100%" />
+  <img src="assets/profile.svg?v=4" alt="Perfil de Fernando Pereira — Software Engineering × Product Design (abrir versão interativa)" width="100%" />
 </a>
 
 <br/>

@@ -149,13 +149,13 @@ def build(data, logo_b64, today, repos_por_dia=None):
 <rect x="110" y="230" width="60" height="4" rx="2" fill="{ACC}"/><rect x="110" y="230" width="18" height="4" rx="2" fill="{TAN}"><animate attributeName="x" values="110;150;110" dur="3.2s" repeatCount="indefinite"/></rect>
 </g>''')
     # decoração temática do hero: símbolos de código, curva de Bézier com âncoras, caneta e cores
-    out.append(f'''<g font-family="Menlo, Consolas, monospace" fill="{INK}" opacity="0.08" font-size="30" font-weight="700">
+    out.append(f'''<g font-family="Menlo, Consolas, monospace" fill="{BROWN}" opacity="0.28" font-size="34" font-weight="700">
 <text x="650" y="70">&lt;/&gt;<animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" dur="6s" repeatCount="indefinite"/></text>
 <text x="585" y="300">{{ }}<animateTransform attributeName="transform" type="translate" values="0 0;4 -8;0 0" dur="7s" repeatCount="indefinite"/></text>
 <text x="735" y="250">=&gt;<animateTransform attributeName="transform" type="translate" values="0 0;-6 -6;0 0" dur="5s" repeatCount="indefinite"/></text>
 <text x="820" y="92">;<animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="8s" repeatCount="indefinite"/></text>
 </g>
-<path d="M 600 300 C 660 200, 720 300, 790 190" fill="none" stroke="{INK}" stroke-opacity="0.12" stroke-width="1.5"/>
+<path d="M 600 300 C 660 200, 720 300, 790 190" fill="none" stroke="{TAN}" stroke-opacity="0.55" stroke-width="2"/>
 <g stroke="{INK}" stroke-opacity="0.18" stroke-width="1.5" fill="#FFFFFF">
 <circle cx="600" cy="300" r="5"/><circle cx="790" cy="190" r="5"/><line x1="600" y1="300" x2="660" y2="200" stroke-dasharray="3 3"/><line x1="790" y1="190" x2="720" y2="300" stroke-dasharray="3 3"/>
 </g>

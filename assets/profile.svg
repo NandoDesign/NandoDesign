@@ -24,13 +24,13 @@
 <text x="140" y="214" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#707070">SOFTWARE × DESIGN</text>
 <rect x="110" y="230" width="60" height="4" rx="2" fill="#191919"/><rect x="110" y="230" width="18" height="4" rx="2" fill="#A58A6E"><animate attributeName="x" values="110;150;110" dur="3.2s" repeatCount="indefinite"/></rect>
 </g>
-<g font-family="Menlo, Consolas, monospace" fill="#191919" opacity="0.08" font-size="30" font-weight="700">
+<g font-family="Menlo, Consolas, monospace" fill="#5E4B3C" opacity="0.28" font-size="34" font-weight="700">
 <text x="650" y="70">&lt;/&gt;<animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" dur="6s" repeatCount="indefinite"/></text>
 <text x="585" y="300">{ }<animateTransform attributeName="transform" type="translate" values="0 0;4 -8;0 0" dur="7s" repeatCount="indefinite"/></text>
 <text x="735" y="250">=&gt;<animateTransform attributeName="transform" type="translate" values="0 0;-6 -6;0 0" dur="5s" repeatCount="indefinite"/></text>
 <text x="820" y="92">;<animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="8s" repeatCount="indefinite"/></text>
 </g>
-<path d="M 600 300 C 660 200, 720 300, 790 190" fill="none" stroke="#191919" stroke-opacity="0.12" stroke-width="1.5"/>
+<path d="M 600 300 C 660 200, 720 300, 790 190" fill="none" stroke="#A58A6E" stroke-opacity="0.55" stroke-width="2"/>
 <g stroke="#191919" stroke-opacity="0.18" stroke-width="1.5" fill="#FFFFFF">
 <circle cx="600" cy="300" r="5"/><circle cx="790" cy="190" r="5"/><line x1="600" y1="300" x2="660" y2="200" stroke-dasharray="3 3"/><line x1="790" y1="190" x2="720" y2="300" stroke-dasharray="3 3"/>
 </g>
@@ -140,11 +140,11 @@
 <text x="128" y="2199" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="-0.5" fill="#191919">GitHub em números</text>
 <text x="128" y="2224" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#707070">Atividade nos últimos 12 meses</text>
 <rect x="128" y="2234" width="0" height="4" rx="2" fill="#191919"><animate attributeName="width" from="0" to="120" dur="0.9s" fill="freeze"/></rect>
-<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.10s" dur="0.5s" fill="freeze"/><rect x="40.0" y="2270" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="60.0" y="2298" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">CONTRIBUIÇÕES NO ANO</text><text x="60.0" y="2340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">364</text></g>
-<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.18s" dur="0.5s" fill="freeze"/><rect x="324.0" y="2270" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="344.0" y="2298" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">COMMITS</text><text x="344.0" y="2340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">37</text></g>
+<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.10s" dur="0.5s" fill="freeze"/><rect x="40.0" y="2270" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="60.0" y="2298" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">CONTRIBUIÇÕES NO ANO</text><text x="60.0" y="2340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">365</text></g>
+<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.18s" dur="0.5s" fill="freeze"/><rect x="324.0" y="2270" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="344.0" y="2298" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">COMMITS</text><text x="344.0" y="2340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">38</text></g>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.26s" dur="0.5s" fill="freeze"/><rect x="608.0" y="2270" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="628.0" y="2298" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">REPOSITÓRIOS PÚBLICOS</text><text x="628.0" y="2340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">1</text></g>
 <g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="0.34s" dur="0.5s" fill="freeze"/><rect x="892.0" y="2270" width="268.0" height="92" rx="16" fill="#F9F9F9" stroke="#ECECEC" stroke-width="2"/><text x="912.0" y="2298" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#707070">SEGUIDORES</text><text x="912.0" y="2340" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#191919">2</text></g>
-<text x="90" y="2392" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#191919">364 contribuições nos últimos 12 meses</text>
+<text x="90" y="2392" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#191919">365 contribuições nos últimos 12 meses</text>
 <text x="80" y="2457" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#707070">Seg</text>
 <text x="80" y="2493" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#707070">Qua</text>
 <text x="80" y="2529" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#707070">Sex</text>
@@ -560,36 +560,36 @@
 <rect x="472" y="2794.0" width="34" height="4.0" rx="6" fill="#A58A6E"><animate attributeName="height" from="0" to="4.0" begin="0.76s" dur="0.8s" fill="freeze"/><animate attributeName="y" from="2798" to="2794.0" begin="0.76s" dur="0.8s" fill="freeze"/></rect>
 <text x="489" y="2816" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#707070">Ago</text>
 <text x="489" y="2786.0" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">0<animate attributeName="opacity" from="0" to="1" begin="1.36s" dur="0.4s" fill="freeze"/></text>
-<rect x="526" y="2743.0" width="34" height="55.0" rx="6" fill="#A58A6E"><animate attributeName="height" from="0" to="55.0" begin="0.83s" dur="0.8s" fill="freeze"/><animate attributeName="y" from="2798" to="2743.0" begin="0.83s" dur="0.8s" fill="freeze"/></rect>
+<rect x="526" y="2743.4" width="34" height="54.6" rx="6" fill="#A58A6E"><animate attributeName="height" from="0" to="54.6" begin="0.83s" dur="0.8s" fill="freeze"/><animate attributeName="y" from="2798" to="2743.4" begin="0.83s" dur="0.8s" fill="freeze"/></rect>
 <text x="543" y="2816" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#707070">Set</text>
-<text x="543" y="2735.0" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">78<animate attributeName="opacity" from="0" to="1" begin="1.43s" dur="0.4s" fill="freeze"/></text>
-<rect x="580" y="2719.0" width="34" height="79.0" rx="6" fill="#A58A6E"><animate attributeName="height" from="0" to="79.0" begin="0.90s" dur="0.8s" fill="freeze"/><animate attributeName="y" from="2798" to="2719.0" begin="0.90s" dur="0.8s" fill="freeze"/></rect>
+<text x="543" y="2735.4" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">78<animate attributeName="opacity" from="0" to="1" begin="1.43s" dur="0.4s" fill="freeze"/></text>
+<rect x="580" y="2719.5" width="34" height="78.5" rx="6" fill="#A58A6E"><animate attributeName="height" from="0" to="78.5" begin="0.90s" dur="0.8s" fill="freeze"/><animate attributeName="y" from="2798" to="2719.5" begin="0.90s" dur="0.8s" fill="freeze"/></rect>
 <text x="597" y="2816" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#707070">Out</text>
-<text x="597" y="2711.0" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">112<animate attributeName="opacity" from="0" to="1" begin="1.50s" dur="0.4s" fill="freeze"/></text>
+<text x="597" y="2711.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">112<animate attributeName="opacity" from="0" to="1" begin="1.50s" dur="0.4s" fill="freeze"/></text>
 <rect x="634" y="2688.0" width="34" height="110.0" rx="6" fill="#191919"><animate attributeName="height" from="0" to="110.0" begin="0.97s" dur="0.8s" fill="freeze"/><animate attributeName="y" from="2798" to="2688.0" begin="0.97s" dur="0.8s" fill="freeze"/></rect>
 <text x="651" y="2816" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#707070">Nov</text>
-<text x="651" y="2680.0" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">156<animate attributeName="opacity" from="0" to="1" begin="1.57s" dur="0.4s" fill="freeze"/></text>
+<text x="651" y="2680.0" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#191919" opacity="0">157<animate attributeName="opacity" from="0" to="1" begin="1.57s" dur="0.4s" fill="freeze"/></text>
 <text x="760" y="2648" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#707070">REPOSITÓRIOS</text>
 <text x="760" y="2674" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#191919">webtech-network/site-webtech-novo</text>
 <text x="1160" y="2674" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">101</text>
 <rect x="760" y="2682" width="400" height="8" rx="4" fill="#ECECEC"/>
-<rect x="760" y="2682" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="143.8" begin="0.50s" dur="0.9s" fill="freeze"/></rect>
+<rect x="760" y="2682" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="143.3" begin="0.50s" dur="0.9s" fill="freeze"/></rect>
 <text x="760" y="2714" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#191919">NandoDesign/arena-criaturas</text>
 <text x="1160" y="2714" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">74</text>
 <rect x="760" y="2722" width="400" height="8" rx="4" fill="#ECECEC"/>
-<rect x="760" y="2722" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="105.3" begin="0.62s" dur="0.9s" fill="freeze"/></rect>
+<rect x="760" y="2722" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="105.0" begin="0.62s" dur="0.9s" fill="freeze"/></rect>
 <text x="760" y="2754" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#191919">NandoDesign/pncd-app-dashboard</text>
 <text x="1160" y="2754" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">61</text>
 <rect x="760" y="2762" width="400" height="8" rx="4" fill="#ECECEC"/>
-<rect x="760" y="2762" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="86.8" begin="0.74s" dur="0.9s" fill="freeze"/></rect>
+<rect x="760" y="2762" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="86.5" begin="0.74s" dur="0.9s" fill="freeze"/></rect>
 <text x="760" y="2794" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#191919">NandoDesign/NandoDesign</text>
-<text x="1160" y="2794" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">32</text>
+<text x="1160" y="2794" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">33</text>
 <rect x="760" y="2802" width="400" height="8" rx="4" fill="#ECECEC"/>
-<rect x="760" y="2802" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="45.6" begin="0.86s" dur="0.9s" fill="freeze"/></rect>
+<rect x="760" y="2802" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="46.8" begin="0.86s" dur="0.9s" fill="freeze"/></rect>
 <text x="760" y="2834" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#191919">jungestevao/projeto-competicao-framework</text>
 <text x="1160" y="2834" text-anchor="end" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#707070">13</text>
 <rect x="760" y="2842" width="400" height="8" rx="4" fill="#ECECEC"/>
-<rect x="760" y="2842" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="18.5" begin="0.98s" dur="0.9s" fill="freeze"/></rect>
+<rect x="760" y="2842" width="0" height="8" rx="4" fill="#A58A6E"><animate attributeName="width" from="0" to="18.4" begin="0.98s" dur="0.9s" fill="freeze"/></rect>
 <line x1="0" y1="2898" x2="1200" y2="2898" stroke="#ECECEC" stroke-width="2"/>
 <rect x="40" y="2922" width="66" height="40" rx="20" fill="#5E4B3C"/>
 <text x="73" y="2948" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="1" fill="#FFFFFF">07</text>
