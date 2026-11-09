@@ -101,11 +101,11 @@ def fetch():
 
 # ---------------------------------------------------------------- SVG
 def title_block(y, num, title, sub):
-    return f'''<rect x="40" y="{y+24}" width="66" height="40" rx="20" fill="{BLUE}"/>
+    return f'''<rect x="40" y="{y+24}" width="66" height="40" rx="20" fill="{INK}"/>
 <text x="73" y="{y+50}" text-anchor="middle" font-family="{F}" font-size="16" font-weight="800" letter-spacing="1" fill="#FFFFFF">{num}</text>
 <text x="128" y="{y+53}" font-family="{F}" font-size="30" font-weight="800" letter-spacing="-0.5" fill="{INK}">{esc(title)}</text>
 <text x="128" y="{y+78}" font-family="{F}" font-size="15" fill="{GREY}">{esc(sub)}</text>
-<rect x="128" y="{y+88}" width="0" height="4" rx="2" fill="{BLUE}"><animate attributeName="width" from="0" to="120" dur="0.9s" fill="freeze"/></rect>'''
+<rect x="128" y="{y+88}" width="0" height="4" rx="2" fill="{INK}"><animate attributeName="width" from="0" to="120" dur="0.9s" fill="freeze"/></rect>'''
 
 
 def chip(x, y, label, fill, color, delay):
@@ -117,6 +117,7 @@ def chip(x, y, label, fill, color, delay):
 
 
 def build(data, logo_b64, today):
+    ACC = INK  # azul fica só nos botões; títulos e destaques em preto
     out = []
     y = 0
 
@@ -124,27 +125,27 @@ def build(data, logo_b64, today):
     HERO_H = 336
     out.append(f'''<clipPath id="frame"><rect width="{W}" height="__H__" rx="24"/></clipPath>
 <clipPath id="hero"><rect width="{W}" height="{HERO_H}"/></clipPath>
-<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="{BLUE}" fill-opacity="0.14"/></pattern>
+<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="{ACC}" fill-opacity="0.14"/></pattern>
 <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="{INK}" flood-opacity="0.12"/></filter></defs>
 <g clip-path="url(#frame)"><g clip-path="url(#hero)">
 <rect width="{W}" height="{HERO_H}" fill="{SOFT}"/>
 <rect width="{W}" height="{HERO_H}" fill="url(#dots)"/>
-<circle cx="1010" cy="180" r="270" fill="none" stroke="{BLUE}" stroke-opacity="0.07" stroke-width="2"/>
+<circle cx="1010" cy="180" r="270" fill="none" stroke="{ACC}" stroke-opacity="0.07" stroke-width="2"/>
 <circle cx="1010" cy="180" r="200" fill="none" stroke="{TAN}" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="4 10"/>
 </g></g>''')
     out.append(f'''<g font-family="{F}">
-<rect x="72" y="64" width="146" height="34" rx="17" fill="{BLUE}"/>
+<rect x="72" y="64" width="146" height="34" rx="17" fill="{ACC}"/>
 <text x="145" y="86" text-anchor="middle" font-size="14" font-weight="700" letter-spacing="3" fill="#FFFFFF">PORTFÓLIO</text>
 <text x="70" y="168" font-size="64" font-weight="800" letter-spacing="-2" fill="{INK}">Fernando Pereira</text>
 <text x="72" y="212" font-size="26" font-weight="600" fill="{INK}">Software Engineering × Product Design</text>
 <text x="72" y="248" font-size="18" fill="{GREY}">Interfaces que funcionam, comunicam e fazem sentido.</text>
 </g>''')
     out.append(f'''<g transform="translate(880 40)">
-<rect x="12" y="12" width="280" height="280" rx="24" fill="{BLUE}" fill-opacity="0.12"/>
+<rect x="12" y="12" width="280" height="280" rx="24" fill="{ACC}" fill-opacity="0.12"/>
 <rect x="1" y="1" width="278" height="278" rx="24" fill="#FFFFFF" stroke="{LINE}" stroke-width="2" filter="url(#shadow)"/>
 <image x="65" y="18" width="150" height="150" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo_b64}"/>
 <text x="140" y="214" text-anchor="middle" font-family="{F}" font-size="13" font-weight="700" letter-spacing="3" fill="{GREY}">SOFTWARE × DESIGN</text>
-<rect x="110" y="230" width="60" height="4" rx="2" fill="{BLUE}"/>
+<rect x="110" y="230" width="60" height="4" rx="2" fill="{ACC}"/>
 </g>''')
     y = HERO_H
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
@@ -164,7 +165,7 @@ def build(data, logo_b64, today):
     # --- 01 Sobre
     out.append(title_block(y, "01", "Sobre", "Quem sou e o que construo"))
     cy = y + 124
-    out.append(f'<rect x="48" y="{cy - 22}" width="6" height="{len(SOBRE) * 32 + 4}" rx="3" fill="{BLUE}"/>')
+    out.append(f'<rect x="48" y="{cy - 22}" width="6" height="{len(SOBRE) * 32 + 4}" rx="3" fill="{ACC}"/>')
     for i, t in enumerate(SOBRE):
         out.append(f'<text x="72" y="{cy + i * 32}" font-family="{F}" font-size="20" fill="{INK}">{esc(t)}</text>')
     y = cy + len(SOBRE) * 32 + 12
@@ -177,15 +178,15 @@ def build(data, logo_b64, today):
     for i, (num, t, tag) in enumerate(PROJETOS):
         x = 40 + i * (bw + gap)
         tag_w = len(tag) * 8.2 + 28
+        cover = base64.b64encode(open(os.path.join(ROOT, "assets", "covers", f"projeto-{num}.jpg"), "rb").read()).decode()
         out.append(f'''<g><animateTransform attributeName="transform" type="translate" from="0 8" to="0 0" begin="{0.1 + i*0.1:.2f}s" dur="0.5s" fill="freeze"/>
-<defs><linearGradient id="poster{i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{TAN}" stop-opacity="0.35"/><stop offset="1" stop-color="{PLATE}" stop-opacity="0.18"/></linearGradient></defs>
-<rect x="{x}" y="{cy}" width="{bw}" height="190" rx="4" fill="{COVER}"/>
-<rect x="{x}" y="{cy}" width="{bw}" height="96" rx="4" fill="url(#poster{i})"/>
-<text x="{x + 24}" y="{cy + 74}" font-family="{F}" font-size="60" font-weight="800" letter-spacing="-2" fill="{BLUE}">{num}</text>
-<text x="{x + 24}" y="{cy + 118}" font-family="{F}" font-size="18" font-weight="700" fill="{INK}">{esc(t)}</text>
-<rect x="{x + 24}" y="{cy + 134}" width="{tag_w:.0f}" height="28" rx="14" fill="#FFFFFF" stroke="{LINE}" stroke-width="2"/>
-<text x="{x + 24 + tag_w/2:.0f}" y="{cy + 153}" text-anchor="middle" font-family="{F}" font-size="13" font-weight="700" fill="{GREY}">{esc(tag)}</text></g>''')
-    y = cy + 190 + 16
+<clipPath id="cover{num}"><rect x="{x}" y="{cy}" width="{bw}" height="170" rx="4"/></clipPath>
+<rect x="{x}" y="{cy}" width="{bw}" height="250" rx="4" fill="{COVER}" stroke="{LINE}" stroke-width="1"/>
+<image x="{x}" y="{cy}" width="{bw}" height="170" preserveAspectRatio="xMidYMid meet" clip-path="url(#cover{num})" href="data:image/jpeg;base64,{cover}"/>
+<text x="{x + 20}" y="{cy + 200}" font-family="{F}" font-size="18" font-weight="700" fill="{INK}">{esc(t)}</text>
+<rect x="{x + 20}" y="{cy + 214}" width="{tag_w:.0f}" height="26" rx="13" fill="#FFFFFF" stroke="{LINE}" stroke-width="2"/>
+<text x="{x + 20 + tag_w/2:.0f}" y="{cy + 232}" text-anchor="middle" font-family="{F}" font-size="13" font-weight="700" fill="{GREY}">{esc(tag)}</text></g>''')
+    y = cy + 250 + 16
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
     # --- 03 Stack
@@ -209,16 +210,16 @@ def build(data, logo_b64, today):
     x = 40
     for i, (name, w) in enumerate(FLUXO):
         last = i == len(FLUXO) - 1
-        fill, color = (BLUE, "#FFFFFF") if last else (SOFT, INK)
+        fill, color = (INK, "#FFFFFF") if last else (SOFT, INK)
         out.append(f'<rect x="{x}" y="{by}" width="{w}" height="64" rx="16" fill="{fill}" stroke="{LINE}" stroke-width="2"/>'
                    f'<text x="{x + w/2}" y="{by + 38}" text-anchor="middle" font-family="{F}" font-size="16" font-weight="700" fill="{color}">{esc(name)}</text>')
         if i < len(OPS):
-            out.append(f'<text x="{x + w + 18}" y="{by + 40}" text-anchor="middle" font-family="{F}" font-size="22" font-weight="700" fill="{BLUE}">{OPS[i]}</text>')
+            out.append(f'<text x="{x + w + 18}" y="{by + 40}" text-anchor="middle" font-family="{F}" font-size="22" font-weight="700" fill="{ACC}">{OPS[i]}</text>')
         x += w + 36
-    out.append(f'<text x="40" y="{by + 112}" font-family="{F}" font-size="20" font-weight="700" fill="{BLUE}">Design defines the experience. Code makes it real.</text>')
+    out.append(f'<text x="40" y="{by + 112}" font-family="{F}" font-size="20" font-weight="700" fill="{ACC}">Design defines the experience. Code makes it real.</text>')
     for i, t in enumerate(FOCO_LINHAS):
         yy = by + 150 + i * 28
-        out.append(f'<rect x="40" y="{yy - 11}" width="10" height="10" rx="2" fill="{BLUE}"/>'
+        out.append(f'<rect x="40" y="{yy - 11}" width="10" height="10" rx="2" fill="{ACC}"/>'
                    f'<text x="62" y="{yy}" font-family="{F}" font-size="18" fill="{INK}">{esc(t)}</text>')
     y = by + 150 + len(FOCO_LINHAS) * 28 + 8
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
@@ -243,7 +244,7 @@ def build(data, logo_b64, today):
     weeks = cal["weeks"]
     counts = sorted(d["contributionCount"] for wk in weeks for d in wk["contributionDays"] if d["contributionCount"] > 0) or [0]
     q1, q2, q3 = counts[len(counts) // 4], counts[len(counts) // 2], counts[(3 * len(counts)) // 4]
-    palette = [LINE, "#C9DDFF", "#7FAEFF", "#2F7BFF", BLUE]
+    palette = [LINE, "#E6D9CB", "#C9B29A", TAN, "#7A6350"]
 
     def level(c):
         if c == 0:
