@@ -4,7 +4,7 @@
 
 <br/>
 
-<a href="https://nandodesign.github.io/">
+<a href="https://nandodesign.github.io/NandoDesign/">
   <img src="assets/buttons/interativo.svg" alt="Versão interativa do perfil" />
 </a>
 &nbsp;
