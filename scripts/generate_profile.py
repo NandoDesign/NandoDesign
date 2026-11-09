@@ -342,7 +342,33 @@ def write_buttons():
             f.write(svg)
 
 
-def write_site_data(data):
+def fetch_repos_por_dia(data):
+    """Repositórios com commits em cada dia com contribuição (uma consulta em lote)."""
+    dias = [d["date"] for wk in data["contributionsCollection"]["contributionCalendar"]["weeks"]
+            for d in wk["contributionDays"] if d["contributionCount"] > 0]
+    if not dias:
+        return {}
+    partes = []
+    for i, dia in enumerate(dias):
+        partes.append(
+            f'd{i}: contributionsCollection(from:"{dia}T00:00:00Z", to:"{dia}T23:59:59Z") '
+            f'{{ commitContributionsByRepository(maxRepositories:25) {{ repository {{ nameWithOwner url }} contributions {{ totalCount }} }} }}')
+    query = "query{ user(login:\"%s\"){ %s } }" % (USER, " ".join(partes))
+    env = dict(os.environ, GH_TOKEN=token())
+    res = subprocess.run(["gh", "api", "graphql", "-f", f"query={query}"], capture_output=True, text=True, env=env)
+    if res.returncode != 0:
+        print("aviso: não foi possível buscar repositórios por dia:", res.stderr.strip())
+        return {}
+    usuario = json.loads(res.stdout)["data"]["user"]
+    saida = {}
+    for i, dia in enumerate(dias):
+        lista = usuario.get(f"d{i}", {}).get("commitContributionsByRepository", [])
+        saida[dia] = [{"nome": r["repository"]["nameWithOwner"], "url": r["repository"]["url"], "commits": r["contributions"]["totalCount"]}
+                      for r in lista if r["contributions"]["totalCount"] > 0]
+    return saida
+
+
+def write_site_data(data, repos_por_dia=None):
     """Dados e cópias de imagens para o site interativo em docs/ (GitHub Pages)."""
     import shutil
     docs = os.path.join(ROOT, "docs")
@@ -355,6 +381,7 @@ def write_site_data(data):
         "commits": data["contributionsCollection"]["totalCommitContributions"],
         "total": cal["totalContributions"],
         "semanas": [[{"d": d["date"], "c": d["contributionCount"]} for d in wk["contributionDays"]] for wk in cal["weeks"]],
+        "repos": repos_por_dia or {},
     }
     with open(os.path.join(docs, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False)
@@ -365,7 +392,7 @@ def write_site_data(data):
 
 def main():
     data = fetch()
-    write_site_data(data)
+    write_site_data(data, fetch_repos_por_dia(data))
     logo_b64 = base64.b64encode(open(LOGO, "rb").read()).decode()
     today = datetime.date.today().strftime("%d/%m/%Y")
     svg = build(data, logo_b64, today)

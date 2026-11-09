@@ -159,7 +159,37 @@
       width: 14px; height: 14px; border-radius: 3px; cursor: pointer;
       transition: transform .15s ease, box-shadow .15s ease; opacity: 0; animation: surgir .5s ease forwards;
     }
+    .celula { border: 0; padding: 0; }
     .celula:hover { transform: scale(1.35); box-shadow: 0 0 0 2px var(--ink); }
+    .modal-fundo {
+      position: fixed; inset: 0; background: rgba(25,25,25,.4); display: flex; align-items: center;
+      justify-content: center; padding: 20px; z-index: 30; animation: aparecer .2s ease;
+    }
+    .modal-fundo[hidden] { display: none; }
+    .modal {
+      background: #fff; border-radius: 18px; padding: 26px 26px 22px; width: 100%; max-width: 440px;
+      position: relative; box-shadow: 0 30px 60px rgba(25,25,25,.25); animation: subir .25s ease;
+    }
+    .modal h3 { margin: 0 0 4px; font-size: 20px; font-weight: 800; padding-right: 40px; }
+    .modal .resumo { margin: 0 0 16px; color: var(--grey); font-size: 14px; }
+    .modal ul { list-style: none; padding: 0; margin: 0; max-height: 300px; overflow-y: auto; }
+    .modal li {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 12px 14px; border: 2px solid var(--line); border-radius: 12px; margin-bottom: 10px;
+      background: var(--bg);
+    }
+    .modal li a { font-weight: 700; color: var(--ink); text-decoration: none; word-break: break-all; }
+    .modal li a:hover { text-decoration: underline; }
+    .modal li span { font-size: 13px; font-weight: 700; color: var(--grey); white-space: nowrap; }
+    .modal .vazio { color: var(--grey); font-size: 15px; }
+    .modal .fechar {
+      position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid var(--line); background: #fff; font-size: 20px; line-height: 1; cursor: pointer;
+    }
+    .modal .fechar:hover { border-color: var(--ink); }
+    .modal .ver-tudo { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--ink); }
+    @keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes subir { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
     @keyframes surgir { to { opacity: 1; } }
     .legenda { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--grey); margin-top: 12px; }
     .legenda i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
@@ -364,6 +394,16 @@
 
   <div class="dica" id="dica" role="status"></div>
 
+  <div class="modal-fundo" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="fechar" id="modal-fechar" aria-label="Fechar">×</button>
+      <h3 id="modal-titulo"></h3>
+      <p class="resumo" id="modal-resumo"></p>
+      <ul id="modal-lista"></ul>
+      <a class="ver-tudo" id="modal-link" target="_blank" rel="noopener">Ver contribuições no GitHub →</a>
+    </div>
+  </div>
+
   <script>
     (function () {
       var reduzir = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -444,10 +484,10 @@
             }
             semana.forEach(function (d) {
               var iso = new Date(d.d + "T00:00:00").getDay(); // 0 = domingo
-              var c = document.createElement("a");
+              var c = document.createElement("button");
+              c.type = "button";
               c.className = "celula";
-              c.href = "https://github.com/NandoDesign?tab=overview&from=" + d.d + "&to=" + d.d;
-              c.target = "_blank"; c.rel = "noopener";
+              c.setAttribute("aria-label", d.c + " contribuições em " + d.d);
               c.style.background = COR[nivel(d.c, q)];
               c.style.gridRow = (iso + 1); // domingo na primeira linha
               c.style.gridColumn = (wi + 1);
@@ -474,6 +514,47 @@
             dica.style.left = ev.clientX + "px"; dica.style.top = ev.clientY + "px";
           });
           grade.addEventListener("mouseleave", function () { dica.classList.remove("ativa"); });
+
+          // pop-up com os repositórios em que houve commits no dia clicado
+          var modal = document.getElementById("modal");
+          function abrirModal(dia, contagem) {
+            var f = formatar(dia);
+            var repos = (dados.repos && dados.repos[dia]) || [];
+            var lista = document.getElementById("modal-lista");
+            lista.textContent = "";
+            document.getElementById("modal-titulo").textContent = f.dia + " de " + MESES_LONGOS[f.mes] + " de " + f.ano;
+            document.getElementById("modal-resumo").textContent =
+              contagem + (contagem === 1 ? " contribuição" : " contribuições") +
+              (repos.length ? " em " + repos.length + (repos.length === 1 ? " repositório" : " repositórios") : "");
+            if (!repos.length) {
+              var vazio = document.createElement("p");
+              vazio.className = "vazio";
+              vazio.textContent = "Nenhum commit neste dia. As contribuições foram de pull requests, issues ou revisões.";
+              lista.appendChild(vazio);
+            }
+            repos.forEach(function (r) {
+              var li = document.createElement("li");
+              var a = document.createElement("a");
+              a.href = /^https:\/\/github\.com\//.test(r.url) ? r.url : "https://github.com/" + r.nome;
+              a.target = "_blank"; a.rel = "noopener";
+              a.textContent = r.nome;
+              var n = document.createElement("span");
+              n.textContent = r.commits + (r.commits === 1 ? " commit" : " commits");
+              li.appendChild(a); li.appendChild(n);
+              lista.appendChild(li);
+            });
+            document.getElementById("modal-link").href = "https://github.com/NandoDesign?tab=overview&from=" + dia + "&to=" + dia;
+            modal.hidden = false;
+            document.getElementById("modal-fechar").focus();
+          }
+          function fecharModal() { modal.hidden = true; }
+          grade.addEventListener("click", function (ev) {
+            var el = ev.target.closest(".celula"); if (!el) return;
+            abrirModal(el.getAttribute("data-d"), parseInt(el.getAttribute("data-c"), 10));
+          });
+          document.getElementById("modal-fechar").addEventListener("click", fecharModal);
+          modal.addEventListener("click", function (ev) { if (ev.target === modal) fecharModal(); });
+          document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !modal.hidden) fecharModal(); });
         })
         .catch(function () {
           document.getElementById("mapa-titulo").textContent = "Não foi possível carregar os dados agora.";
