@@ -1,9 +1,13 @@
 <div align="center">
 
-<img src="assets/profile.svg?v=2" alt="Perfil de Fernando Pereira — Software Engineering × Product Design" width="100%" />
+<img src="assets/profile.svg?v=3" alt="Perfil de Fernando Pereira — Software Engineering × Product Design" width="100%" />
 
 <br/>
 
+<a href="https://nandodesign.github.io/">
+  <img src="assets/buttons/interativo.svg" alt="Versão interativa do perfil" />
+</a>
+&nbsp;
 <a href="https://github.com/NandoDesign">
   <img src="assets/buttons/seguir.svg" alt="Seguir no GitHub" />
 </a>

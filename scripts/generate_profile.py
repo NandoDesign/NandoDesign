@@ -24,7 +24,8 @@ F = "Helvetica Neue, Helvetica, Arial, sans-serif"
 W = 1200
 BLUE, INK, GREY, LINE, SOFT = "#0057FF", "#191919", "#707070", "#ECECEC", "#F9F9F9"
 COVER = "#F0F0F0"  # fundo das capas de projeto no Behance
-TAN = "#A58A6E"    # tom bege do pôster do projeto "Portifólio" (estimado visualmente)
+TAN = "#A58A6E"
+BROWN = "#5E4B3C"  # marrom escuro, tom derivado do bege do pôster    # tom bege do pôster do projeto "Portifólio" (estimado visualmente)
 PLATE = "#6F6F6F"  # cinza do pôster (estimado visualmente)
 TABS = ["Sobre", "Trabalhos", "Stack", "Foco", "Formação", "GitHub", "Contato"]
 PORTFOLIO_URL = "https://www.behance.net/NandoDesign-real"
@@ -101,7 +102,7 @@ def fetch():
 
 # ---------------------------------------------------------------- SVG
 def title_block(y, num, title, sub):
-    return f'''<rect x="40" y="{y+24}" width="66" height="40" rx="20" fill="{INK}"/>
+    return f'''<rect x="40" y="{y+24}" width="66" height="40" rx="20" fill="{BROWN}"/>
 <text x="73" y="{y+50}" text-anchor="middle" font-family="{F}" font-size="16" font-weight="800" letter-spacing="1" fill="#FFFFFF">{num}</text>
 <text x="128" y="{y+53}" font-family="{F}" font-size="30" font-weight="800" letter-spacing="-0.5" fill="{INK}">{esc(title)}</text>
 <text x="128" y="{y+78}" font-family="{F}" font-size="15" fill="{GREY}">{esc(sub)}</text>
@@ -145,7 +146,7 @@ def build(data, logo_b64, today):
 <rect x="1" y="1" width="278" height="278" rx="24" fill="#FFFFFF" stroke="{LINE}" stroke-width="2" filter="url(#shadow)"/>
 <image x="65" y="18" width="150" height="150" preserveAspectRatio="xMidYMid meet" href="data:image/png;base64,{logo_b64}"/>
 <text x="140" y="214" text-anchor="middle" font-family="{F}" font-size="13" font-weight="700" letter-spacing="3" fill="{GREY}">SOFTWARE × DESIGN</text>
-<rect x="110" y="230" width="60" height="4" rx="2" fill="{ACC}"/>
+<rect x="110" y="230" width="60" height="4" rx="2" fill="{ACC}"/><rect x="110" y="230" width="18" height="4" rx="2" fill="{TAN}"><animate attributeName="x" values="110;150;110" dur="3.2s" repeatCount="indefinite"/></rect>
 </g>''')
     y = HERO_H
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
@@ -263,20 +264,36 @@ def build(data, logo_b64, today):
                    f'<rect x="{tx:.1f}" y="{ty}" width="{tw:.1f}" height="92" rx="16" fill="{SOFT}" stroke="{LINE}" stroke-width="2"/>'
                    f'<text x="{tx + 20:.1f}" y="{ty + 28}" font-family="{F}" font-size="12" font-weight="700" letter-spacing="1.5" fill="{GREY}">{esc(label.upper())}</text>'
                    f'<text x="{tx + 20:.1f}" y="{ty + 70}" font-family="{F}" font-size="38" font-weight="800" letter-spacing="-1" fill="{INK}">{num}</text></g>')
-    hy = ty + 92 + 28
+    total = cal["totalContributions"]
+    out.append(f'<text x="90" y="{ty + 92 + 30}" font-family="{F}" font-size="15" font-weight="700" fill="{INK}">{total} contribuições nos últimos 12 meses</text>')
+    hy = ty + 92 + 66
     cell, pitch = 14, 18
+    X0 = 90
+    # rótulos de dia da semana (Seg, Qua, Sex) à esquerda
+    for row, nome in [(1, "Seg"), (3, "Qua"), (5, "Sex")]:
+        out.append(f'<text x="{X0 - 10}" y="{hy + row * pitch + 11}" text-anchor="end" font-family="{F}" font-size="11" fill="{GREY}">{nome}</text>')
+    # rótulos de mês no topo, na primeira semana de cada mês
+    meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+    ultimo = None
+    for wi, wk in enumerate(weeks):
+        primeiro = next((d for d in wk["contributionDays"] if int(d["date"][8:10]) <= 7), None)
+        if primeiro:
+            mes = int(primeiro["date"][5:7])
+            if mes != ultimo and wi < len(weeks) - 2:
+                out.append(f'<text x="{X0 + wi * pitch}" y="{hy - 8}" font-family="{F}" font-size="11" fill="{GREY}">{meses[mes - 1]}</text>')
+                ultimo = mes
     for wi, wk in enumerate(weeks):
         for day in wk["contributionDays"]:
             dow = datetime.date.fromisoformat(day["date"]).weekday()
             row = (dow + 1) % 7
             lvl = level(day["contributionCount"])
-            out.append(f'<rect x="{40 + wi * pitch}" y="{hy + row * pitch}" width="{cell}" height="{cell}" rx="3" fill="{palette[lvl]}">'
+            out.append(f'<rect x="{X0 + wi * pitch}" y="{hy + row * pitch}" width="{cell}" height="{cell}" rx="3" fill="{palette[lvl]}">'
                        f'<animate attributeName="fill-opacity" from="0.35" to="1" begin="{0.3 + wi * 0.02:.2f}s" dur="0.4s" fill="freeze"/></rect>')
     ly = hy + 7 * pitch + 14
-    out.append(f'<text x="40" y="{ly + 12}" font-family="{F}" font-size="13" fill="{GREY}">Menos</text>')
+    out.append(f'<text x="{X0}" y="{ly + 12}" font-family="{F}" font-size="13" fill="{GREY}">Menos</text>')
     for i, c in enumerate(palette):
-        out.append(f'<rect x="{100 + i*18}" y="{ly}" width="14" height="14" rx="3" fill="{c}"/>')
-    out.append(f'<text x="{100 + 5*18 + 6}" y="{ly + 12}" font-family="{F}" font-size="13" fill="{GREY}">Mais</text>')
+        out.append(f'<rect x="{X0 + 46 + i*18}" y="{ly}" width="14" height="14" rx="3" fill="{c}"/>')
+    out.append(f'<text x="{X0 + 46 + 5*18 + 6}" y="{ly + 12}" font-family="{F}" font-size="13" fill="{GREY}">Mais</text>')
     y = ly + 14 + 26
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
@@ -318,14 +335,37 @@ def write_buttons():
         "seguir.svg": pill("Seguir no GitHub", 220, BLUE, "#FFFFFF"),
         "mensagem.svg": pill("Enviar e-mail", 200, "#F5F8FF", BLUE, stroke="#E0EAFF"),
         "portfolio.svg": pill("Ver portfólio no Behance", 260, BLUE, "#FFFFFF"),
+        "interativo.svg": pill("Versão interativa", 220, INK, "#FFFFFF"),
     }
     for name, svg in files.items():
         with open(os.path.join(d, name), "w", encoding="utf-8") as f:
             f.write(svg)
 
 
+def write_site_data(data):
+    """Dados e cópias de imagens para o site interativo em docs/ (GitHub Pages)."""
+    import shutil
+    docs = os.path.join(ROOT, "docs")
+    os.makedirs(os.path.join(docs, "assets", "covers"), exist_ok=True)
+    cal = data["contributionsCollection"]["contributionCalendar"]
+    payload = {
+        "atualizado": datetime.date.today().isoformat(),
+        "seguidores": data["followers"]["totalCount"],
+        "repositorios": data["repositories"]["totalCount"],
+        "commits": data["contributionsCollection"]["totalCommitContributions"],
+        "total": cal["totalContributions"],
+        "semanas": [[{"d": d["date"], "c": d["contributionCount"]} for d in wk["contributionDays"]] for wk in cal["weeks"]],
+    }
+    with open(os.path.join(docs, "data.json"), "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False)
+    shutil.copy(LOGO, os.path.join(docs, "assets", "logo.png"))
+    for n in ("01", "02", "03"):
+        shutil.copy(os.path.join(ROOT, "assets", "covers", f"projeto-{n}.jpg"), os.path.join(docs, "assets", "covers", f"projeto-{n}.jpg"))
+
+
 def main():
     data = fetch()
+    write_site_data(data)
     logo_b64 = base64.b64encode(open(LOGO, "rb").read()).decode()
     today = datetime.date.today().strftime("%d/%m/%Y")
     svg = build(data, logo_b64, today)
