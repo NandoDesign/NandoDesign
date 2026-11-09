@@ -1,6 +1,14 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Fernando Pereira — Software Engineering × Product Design" width="100%" />
+<img src="assets/logo.png" alt="Logo NANDO DESIGN" width="180" />
+
+<br/>
+
+### Fernando Pereira
+
+**Software Engineering × Product Design**
+
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&pause=1000&color=0057FF&center=true&vCenter=true&width=640&lines=Estudante+de+Engenharia+de+Software;Background+em+Design+Gr%C3%A1fico;C%C3%B3digo+bem+estruturado+%2B+pensamento+visual;Interfaces+que+fazem+sentido+para+quem+usa" alt="Typing animation" />
 
 <br/>
 
@@ -46,7 +54,7 @@ Meu foco é construir produtos digitais combinando **código bem estruturado**, 
 
 <p align="center">
   <a href="https://www.behance.net/NandoDesign-real">
-    <img src="https://img.shields.io/badge/Ver_portf%C3%B3lio_completo-1769FF?style=for-the-badge&logo=behance&logoColor=white" alt="Portfólio completo no Behance" />
+    <img src="https://img.shields.io/badge/Ver_portf%C3%B3lio_completo-0057FF?style=for-the-badge&logo=behance&logoColor=white" alt="Portfólio completo no Behance" />
   </a>
 </p>
 
@@ -131,7 +139,7 @@ Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologi
 
 <p align="center">
   <a href="https://www.behance.net/NandoDesign-real">
-    <img src="https://img.shields.io/badge/Behance-1769FF?style=for-the-badge&logo=behance&logoColor=white" alt="Behance" />
+    <img src="https://img.shields.io/badge/Behance-0057FF?style=for-the-badge&logo=behance&logoColor=white" alt="Behance" />
   </a>
   &nbsp;
   <a href="mailto:nandopv12@gmail.com">
