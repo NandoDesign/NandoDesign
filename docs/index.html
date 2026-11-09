@@ -222,6 +222,10 @@
     .modal li a:hover { text-decoration: underline; }
     .modal li span { font-size: 13px; font-weight: 700; color: var(--grey); white-space: nowrap; }
     .modal .vazio { color: var(--grey); font-size: 15px; }
+    .selo-org {
+      display: inline-block; margin-left: 8px; padding: 2px 10px; border-radius: 999px; font-size: 11px;
+      font-weight: 700; letter-spacing: 1px; background: var(--brown); color: #fff; vertical-align: middle;
+    }
     .modal .fechar {
       position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%;
       border: 2px solid var(--line); background: #fff; font-size: 20px; line-height: 1; cursor: pointer;
@@ -575,7 +579,7 @@
           var totais = {};
           Object.keys(dados.repos || {}).forEach(function (dia) {
             (dados.repos[dia] || []).forEach(function (r) {
-              if (!totais[r.nome]) totais[r.nome] = { commits: 0, url: r.url };
+              if (!totais[r.nome]) totais[r.nome] = { commits: 0, url: r.url, org: !!r.org };
               totais[r.nome].commits += r.commits;
             });
           });
@@ -589,6 +593,7 @@
             var a = document.createElement("a");
             a.href = /^https:\/\/github\.com\//.test(x[1].url) ? x[1].url : "https://github.com/" + x[0];
             a.target = "_blank"; a.rel = "noopener"; a.textContent = x[0];
+            if (x[1].org) { var sel = document.createElement("span"); sel.className = "selo-org"; sel.textContent = "ORGANIZAÇÃO"; a.appendChild(sel); }
             var n = document.createElement("span"); n.textContent = x[1].commits + (x[1].commits === 1 ? " commit" : " commits");
             topo.appendChild(a); topo.appendChild(n);
             var trilho = document.createElement("div"); trilho.className = "trilho";
@@ -639,6 +644,7 @@
               a.href = /^https:\/\/github\.com\//.test(r.url) ? r.url : "https://github.com/" + r.nome;
               a.target = "_blank"; a.rel = "noopener";
               a.textContent = r.nome;
+              if (r.org) { var selo = document.createElement("span"); selo.className = "selo-org"; selo.textContent = "ORGANIZAÇÃO"; a.appendChild(selo); }
               var n = document.createElement("span");
               n.textContent = r.commits + (r.commits === 1 ? " commit" : " commits");
               li.appendChild(a); li.appendChild(n);

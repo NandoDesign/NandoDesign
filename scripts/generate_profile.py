@@ -393,29 +393,40 @@ def write_buttons():
             f.write(svg)
 
 
-def fetch_repos_por_dia(data):
-    """Repositórios com commits em cada dia com contribuição (uma consulta em lote)."""
-    dias = [d["date"] for wk in data["contributionsCollection"]["contributionCalendar"]["weeks"]
-            for d in wk["contributionDays"] if d["contributionCount"] > 0]
-    if not dias:
-        return {}
-    partes = []
-    for i, dia in enumerate(dias):
-        partes.append(
-            f'd{i}: contributionsCollection(from:"{dia}T00:00:00Z", to:"{dia}T23:59:59Z") '
-            f'{{ commitContributionsByRepository(maxRepositories:25) {{ repository {{ nameWithOwner url }} contributions {{ totalCount }} }} }}')
-    query = "query{ user(login:\"%s\"){ %s } }" % (USER, " ".join(partes))
+def fetch_organizacoes():
+    """Logins das organizações das quais a conta participa."""
     env = dict(os.environ, GH_TOKEN=token())
-    res = subprocess.run(["gh", "api", "graphql", "-f", f"query={query}"], capture_output=True, text=True, env=env)
+    res = subprocess.run(["gh", "api", "user/orgs", "--jq", ".[].login"], capture_output=True, text=True, env=env)
     if res.returncode != 0:
-        print("aviso: não foi possível buscar repositórios por dia:", res.stderr.strip())
+        return []
+    return [x.strip() for x in res.stdout.splitlines() if x.strip()]
+
+
+def fetch_repos_por_dia(data):
+    """Repositórios com commits por dia, pela busca de commits: inclui privados e de organizações."""
+    desde = (datetime.date.today() - datetime.timedelta(days=366)).isoformat()
+    env = dict(os.environ, GH_TOKEN=token())
+    res = subprocess.run(
+        ["gh", "api", "-X", "GET", "search/commits", "-H", "Accept: application/vnd.github.cloak-preview+json",
+         "-f", f"q=author:{USER} committer-date:>={desde}", "-f", "per_page=100", "--paginate",
+         "--jq", ".items[] | [.repository.full_name, .commit.committer.date] | @tsv"],
+        capture_output=True, text=True, env=env)
+    if res.returncode != 0:
+        print("aviso: não foi possível buscar commits:", res.stderr.strip())
         return {}
-    usuario = json.loads(res.stdout)["data"]["user"]
+    contagem = {}
+    for linha in res.stdout.splitlines():
+        partes = linha.split("\t")
+        if len(partes) != 2:
+            continue
+        repo, quando = partes
+        dia = quando[:10]
+        contagem.setdefault(dia, {})
+        contagem[dia][repo] = contagem[dia].get(repo, 0) + 1
     saida = {}
-    for i, dia in enumerate(dias):
-        lista = usuario.get(f"d{i}", {}).get("commitContributionsByRepository", [])
-        saida[dia] = [{"nome": r["repository"]["nameWithOwner"], "url": r["repository"]["url"], "commits": r["contributions"]["totalCount"]}
-                      for r in lista if r["contributions"]["totalCount"] > 0]
+    for dia, repos in contagem.items():
+        saida[dia] = [{"nome": r, "url": f"https://github.com/{r}", "commits": c, "org": r.split("/")[0] in ORGS}
+                      for r, c in sorted(repos.items(), key=lambda kv: -kv[1])]
     return saida
 
 
@@ -433,6 +444,7 @@ def write_site_data(data, repos_por_dia=None):
         "total": cal["totalContributions"],
         "semanas": [[{"d": d["date"], "c": d["contributionCount"]} for d in wk["contributionDays"]] for wk in cal["weeks"]],
         "repos": repos_por_dia or {},
+        "organizacoes": sorted(ORGS),
     }
     with open(os.path.join(docs, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False)
@@ -442,8 +454,13 @@ def write_site_data(data, repos_por_dia=None):
         shutil.copy(os.path.join(ROOT, "assets", "covers", f"projeto-{n}.jpg"), os.path.join(docs, "assets", "covers", f"projeto-{n}.jpg"))
 
 
+ORGS = set()
+
+
 def main():
+    global ORGS
     data = fetch()
+    ORGS = set(fetch_organizacoes())
     repos_por_dia = fetch_repos_por_dia(data)
     write_site_data(data, repos_por_dia)
     logo_b64 = base64.b64encode(open(LOGO, "rb").read()).decode()

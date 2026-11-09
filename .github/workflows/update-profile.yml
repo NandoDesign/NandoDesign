@@ -16,7 +16,7 @@ jobs:
 
       - name: Gerar perfil e dados do site com dados atuais do GitHub
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
         run: python3 scripts/generate_profile.py
 
       - name: Commitar apenas se algo mudou
