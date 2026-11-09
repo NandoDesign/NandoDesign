@@ -6,9 +6,17 @@
 
 **Transformando ideias em interfaces que funcionam, comunicam e fazem sentido.**
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=640&lines=Estudante+de+Engenharia+de+Software;Background+em+Design+Gr%C3%A1fico;C%C3%B3digo+bem+estruturado+%2B+pensamento+visual;Interfaces+que+fazem+sentido+para+quem+usa" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&pause=1000&color=1769FF&center=true&vCenter=true&width=640&lines=Estudante+de+Engenharia+de+Software;Background+em+Design+Gr%C3%A1fico;C%C3%B3digo+bem+estruturado+%2B+pensamento+visual;Interfaces+que+fazem+sentido+para+quem+usa" alt="Typing animation" />
+
+<br/>
+
+<a href="https://www.behance.net/NandoDesign-real">
+  <img src="https://img.shields.io/badge/Ver_portf%C3%B3lio_completo-1769FF?style=for-the-badge&logo=behance&logoColor=white" alt="Portfólio no Behance" />
+</a>
 
 </div>
+
+<br/>
 
 Estudante de **Engenharia de Software** com background em **Design Gráfico**, explorando a interseção entre desenvolvimento, interfaces e experiência do usuário.
 
@@ -16,37 +24,67 @@ Meu foco é construir produtos digitais combinando **código bem estruturado**, 
 
 ---
 
-## 🛠️ Stack
+## Trabalhos
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://www.behance.net/gallery/246571711/Portifolio-de-desenhos-a-mao">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/3a3023246571711.Y3JvcCw3NzksNjA5LDE1MCwyMTQ.png" width="100%" alt="Portfólio de desenhos à mão" />
+      </a>
+      <br/>
+      <sub><b>Portfólio de desenhos à mão</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://www.behance.net/gallery/246519147/Portifolio">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/cb6e1b246519147.Y3JvcCw3NjEsNTk1LDE1NiwyMTY.png" width="100%" alt="Portfólio" />
+      </a>
+      <br/>
+      <sub><b>Portfólio</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://www.behance.net/gallery/161641475/saturno">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/80f26f161641475.Y3JvcCwxOTQzLDE1MjAsMjc4LDA.png" width="100%" alt="Saturno" />
+      </a>
+      <br/>
+      <sub><b>Saturno</b></sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Stack
 
 **Front-end**
 
 <p>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
 </p>
 
 **Design & Produto**
 
 <p>
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
-  <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white" alt="Illustrator" />
-  <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white" alt="Photoshop" />
-  <img src="https://img.shields.io/badge/Premiere_Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white" alt="Premiere Pro" />
-  <img src="https://img.shields.io/badge/After_Effects-9999FF?style=for-the-badge&logo=adobeaftereffects&logoColor=white" alt="After Effects" />
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white" alt="Figma" />
+  <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" alt="Illustrator" />
+  <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" alt="Photoshop" />
+  <img src="https://img.shields.io/badge/Premiere_Pro-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" alt="Premiere Pro" />
+  <img src="https://img.shields.io/badge/After_Effects-9999FF?style=flat-square&logo=adobeaftereffects&logoColor=white" alt="After Effects" />
 </p>
 
 **Workflow**
 
 <p>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" />
 </p>
 
 ---
 
-## 🔭 Em foco agora
+## Em foco agora
 
 ```text
 Software Engineering  +  Visual Design
@@ -64,17 +102,7 @@ Software Engineering  +  Visual Design
 
 ---
 
-## 📂 Projetos em destaque
-
-**TP-2 · Curriculum Vitae** — `HTML` · `CSS` · `Web Design`
-Página de currículo com estrutura HTML semântica, estilização CSS responsiva e organização visual de informações profissionais.
-
-**TP-1 · Web Fundamentals** — `Markdown` · `GitHub` · `Web`
-Projeto acadêmico sobre os fundamentos do ecossistema de desenvolvimento, do uso do GitHub e da documentação técnica em Markdown.
-
----
-
-## 🎯 Abordagem
+## Abordagem
 
 > **"Design defines the experience. Code makes it real."**
 
@@ -87,31 +115,34 @@ O objetivo não é só uma interface bonita, e sim uma interface que **funcione 
 
 ---
 
-## 🎓 Formação
+## Formação
 
 * **Bacharelado em Engenharia de Software** — PUC Minas *(2026 — 2029)*
 * **Design Gráfico & Motion** — Escola ZION *(em andamento)*
 
 ---
 
-## 📊 GitHub em números
+## GitHub em números
 
 <p align="center">
-  <img height="180" src="https://streak-stats.demolab.com?user=NandoDesign&hide_border=true&theme=tokyonight" alt="Sequência de contribuições" />
+  <img height="180" src="https://streak-stats.demolab.com?user=NandoDesign&hide_border=true&theme=default" alt="Sequência de contribuições" />
 </p>
 
 ---
 
-## 🤝 Vamos conversar
+## Contato
 
 Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologia, design e produtos digitais.
 
 <p align="center">
+  <a href="https://www.behance.net/NandoDesign-real">
+    <img src="https://img.shields.io/badge/Behance-1769FF?style=for-the-badge&logo=behance&logoColor=white" alt="Behance" />
+  </a>
+  &nbsp;
   <a href="mailto:nandopv12@gmail.com">
     <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <!-- LinkedIn: adicionar o link do perfil quando quiser exibir -->
-  <!-- Behance: adicionar o link do portfólio quando quiser exibir -->
 </p>
 
 ---
