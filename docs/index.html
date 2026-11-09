@@ -45,6 +45,18 @@
       background-image: radial-gradient(rgba(0,87,255,.14) 1.6px, transparent 1.6px);
       background-size: 24px 24px;
     }
+    .deco { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .deco .sim {
+      position: absolute; font-family: Menlo, Consolas, monospace; font-weight: 700; color: var(--ink);
+      opacity: .08; font-size: 30px; animation: flutuar-sim 7s ease-in-out infinite;
+    }
+    .deco .sim:nth-child(2) { animation-duration: 9s; animation-delay: -2s; }
+    .deco .sim:nth-child(3) { animation-duration: 6s; animation-delay: -4s; }
+    .deco .sim:nth-child(4) { animation-duration: 8s; animation-delay: -1s; }
+    .deco svg { position: absolute; right: 0; top: 0; width: 60%; height: 100%; }
+    .deco .anel { position: absolute; right: -180px; top: -120px; width: 540px; height: 540px; border-radius: 50%;
+      border: 2px dashed rgba(165,138,110,.35); animation: girar 60s linear infinite; }
+    @keyframes flutuar-sim { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: center; }
     .pill {
       display: inline-block; background: var(--ink); color: #fff; border-radius: 999px;
@@ -290,6 +302,21 @@
   </nav>
 
   <header class="hero">
+    <div class="deco" aria-hidden="true">
+      <span class="sim" style="left:48%;top:14%">&lt;/&gt;</span>
+      <span class="sim" style="left:42%;top:72%">{ }</span>
+      <span class="sim" style="left:58%;top:56%">=&gt;</span>
+      <span class="sim" style="left:70%;top:8%">;</span>
+      <span class="anel"></span>
+      <svg viewBox="0 0 600 340" preserveAspectRatio="none">
+        <path d="M 300 290 C 360 190, 420 290, 490 180" fill="none" stroke="#191919" stroke-opacity=".14" stroke-width="1.5"/>
+        <circle cx="300" cy="290" r="5" fill="#fff" stroke="#191919" stroke-opacity=".25"/>
+        <circle cx="490" cy="180" r="5" fill="#fff" stroke="#191919" stroke-opacity=".25"/>
+        <circle cx="330" cy="240" r="7" fill="#A58A6E" fill-opacity=".35"/>
+        <circle cx="346" cy="240" r="7" fill="#5E4B3C" fill-opacity=".35"/>
+        <circle cx="362" cy="240" r="7" fill="#191919" fill-opacity=".25"/>
+      </svg>
+    </div>
     <div class="wrap hero-grid">
       <div class="revelar">
         <span class="pill">PORTFÓLIO</span>

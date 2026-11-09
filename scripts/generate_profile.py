@@ -148,6 +148,21 @@ def build(data, logo_b64, today, repos_por_dia=None):
 <text x="140" y="214" text-anchor="middle" font-family="{F}" font-size="13" font-weight="700" letter-spacing="3" fill="{GREY}">SOFTWARE × DESIGN</text>
 <rect x="110" y="230" width="60" height="4" rx="2" fill="{ACC}"/><rect x="110" y="230" width="18" height="4" rx="2" fill="{TAN}"><animate attributeName="x" values="110;150;110" dur="3.2s" repeatCount="indefinite"/></rect>
 </g>''')
+    # decoração temática do hero: símbolos de código, curva de Bézier com âncoras, caneta e cores
+    out.append(f'''<g font-family="Menlo, Consolas, monospace" fill="{INK}" opacity="0.08" font-size="30" font-weight="700">
+<text x="650" y="70">&lt;/&gt;<animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" dur="6s" repeatCount="indefinite"/></text>
+<text x="585" y="300">{{ }}<animateTransform attributeName="transform" type="translate" values="0 0;4 -8;0 0" dur="7s" repeatCount="indefinite"/></text>
+<text x="735" y="250">=&gt;<animateTransform attributeName="transform" type="translate" values="0 0;-6 -6;0 0" dur="5s" repeatCount="indefinite"/></text>
+<text x="820" y="92">;<animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="8s" repeatCount="indefinite"/></text>
+</g>
+<path d="M 600 300 C 660 200, 720 300, 790 190" fill="none" stroke="{INK}" stroke-opacity="0.12" stroke-width="1.5"/>
+<g stroke="{INK}" stroke-opacity="0.18" stroke-width="1.5" fill="#FFFFFF">
+<circle cx="600" cy="300" r="5"/><circle cx="790" cy="190" r="5"/><line x1="600" y1="300" x2="660" y2="200" stroke-dasharray="3 3"/><line x1="790" y1="190" x2="720" y2="300" stroke-dasharray="3 3"/>
+</g>
+<g transform="translate(700 40) rotate(28)" opacity="0.14">
+<path d="M0 0 L10 -40 L20 0 Z" fill="{TAN}"/><line x1="10" y1="-40" x2="10" y2="-62" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>
+</g>
+<circle cx="640" cy="236" r="7" fill="{TAN}" fill-opacity="0.35"/><circle cx="656" cy="236" r="7" fill="{BROWN}" fill-opacity="0.35"/><circle cx="672" cy="236" r="7" fill="{INK}" fill-opacity="0.25"/>''')
     y = HERO_H
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
@@ -345,7 +360,8 @@ def build(data, logo_b64, today, repos_por_dia=None):
         out.append(f'<text x="1160" y="{ly2}" text-anchor="end" font-family="{F}" font-size="13" font-weight="700" fill="{GREY}">{v["commits"]}</text>')
         out.append(f'<rect x="{rx0}" y="{ly2 + 8}" width="400" height="8" rx="4" fill="{LINE}"/>')
         out.append(f'<rect x="{rx0}" y="{ly2 + 8}" width="0" height="8" rx="4" fill="{TAN}"><animate attributeName="width" from="0" to="{400 * share:.1f}" begin="{0.5 + i * 0.12:.2f}s" dur="0.9s" fill="freeze"/></rect>')
-    y = base + 40
+    fim_repos = ay + 26 + max(len(ranking), 1) * 40 + 24
+    y = max(base + 40, fim_repos)
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
     # --- 07 Contato
