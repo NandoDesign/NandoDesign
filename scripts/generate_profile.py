@@ -117,7 +117,7 @@ def chip(x, y, label, fill, color, delay):
     return s, w
 
 
-def build(data, logo_b64, today):
+def build(data, logo_b64, today, repos_por_dia=None):
     ACC = INK  # azul fica só nos botões; títulos e destaques em preto
     out = []
     y = 0
@@ -302,6 +302,50 @@ def build(data, logo_b64, today):
         out.append(f'<rect x="{X0 + 46 + i*18}" y="{ly}" width="14" height="14" rx="3" fill="{c}"/>')
     out.append(f'<text x="{X0 + 46 + 5*18 + 6}" y="{ly + 12}" font-family="{F}" font-size="13" fill="{GREY}">Mais</text>')
     y = ly + 14 + 26
+
+    # --- atividade mensal (barras que crescem) e repositórios (progresso)
+    meses_tot = {}
+    for wk in weeks:
+        for d in wk["contributionDays"]:
+            k = d["date"][:7]
+            meses_tot[k] = meses_tot.get(k, 0) + d["contributionCount"]
+    chaves = sorted(meses_tot)[-12:]
+    nomes = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+    maxv = max([meses_tot[k] for k in chaves] + [1])
+    ay = y + 40
+    out.append(f'<text x="40" y="{ay}" font-family="{F}" font-size="13" font-weight="700" letter-spacing="2" fill="{GREY}">ATIVIDADE MENSAL</text>')
+    base = ay + 150
+    for i, k in enumerate(chaves):
+        v = meses_tot[k]
+        h = max(4, v / maxv * 110)
+        bx = 40 + i * 54
+        atraso = 0.2 + i * 0.07
+        cor = INK if v == maxv else TAN
+        out.append(f'<rect x="{bx}" y="{base - h:.1f}" width="34" height="{h:.1f}" rx="6" fill="{cor}">'
+                   f'<animate attributeName="height" from="0" to="{h:.1f}" begin="{atraso:.2f}s" dur="0.8s" fill="freeze"/>'
+                   f'<animate attributeName="y" from="{base}" to="{base - h:.1f}" begin="{atraso:.2f}s" dur="0.8s" fill="freeze"/></rect>')
+        out.append(f'<text x="{bx + 17}" y="{base + 18}" text-anchor="middle" font-family="{F}" font-size="12" fill="{GREY}">{nomes[int(k[5:7]) - 1]}</text>')
+        out.append(f'<text x="{bx + 17}" y="{base - h - 8:.1f}" text-anchor="middle" font-family="{F}" font-size="11" font-weight="700" fill="{INK}" opacity="0">{v}<animate attributeName="opacity" from="0" to="1" begin="{atraso + 0.6:.2f}s" dur="0.4s" fill="freeze"/></text>')
+
+    # repositórios com commits no último ano (contagem a partir dos dias)
+    totais = {}
+    for lista in (repos_por_dia or {}).values():
+        for r in lista:
+            cur = totais.get(r["nome"], {"commits": 0, "url": r["url"]})
+            cur["commits"] += r["commits"]
+            totais[r["nome"]] = cur
+    ranking = sorted(totais.items(), key=lambda kv: -kv[1]["commits"])[:5]
+    rx0 = 760
+    out.append(f'<text x="{rx0}" y="{ay}" font-family="{F}" font-size="13" font-weight="700" letter-spacing="2" fill="{GREY}">REPOSITÓRIOS</text>')
+    tot_c = sum(v["commits"] for _, v in ranking) or 1
+    for i, (nome, v) in enumerate(ranking):
+        ly2 = ay + 26 + i * 40
+        share = v["commits"] / tot_c
+        out.append(f'<text x="{rx0}" y="{ly2}" font-family="{F}" font-size="14" font-weight="600" fill="{INK}">{esc(nome)}</text>')
+        out.append(f'<text x="1160" y="{ly2}" text-anchor="end" font-family="{F}" font-size="13" font-weight="700" fill="{GREY}">{v["commits"]}</text>')
+        out.append(f'<rect x="{rx0}" y="{ly2 + 8}" width="400" height="8" rx="4" fill="{LINE}"/>')
+        out.append(f'<rect x="{rx0}" y="{ly2 + 8}" width="0" height="8" rx="4" fill="{TAN}"><animate attributeName="width" from="0" to="{400 * share:.1f}" begin="{0.5 + i * 0.12:.2f}s" dur="0.9s" fill="freeze"/></rect>')
+    y = base + 40
     out.append(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}" stroke="{LINE}" stroke-width="2"/>')
 
     # --- 07 Contato
@@ -400,10 +444,11 @@ def write_site_data(data, repos_por_dia=None):
 
 def main():
     data = fetch()
-    write_site_data(data, fetch_repos_por_dia(data))
+    repos_por_dia = fetch_repos_por_dia(data)
+    write_site_data(data, repos_por_dia)
     logo_b64 = base64.b64encode(open(LOGO, "rb").read()).decode()
     today = datetime.date.today().strftime("%d/%m/%Y")
-    svg = build(data, logo_b64, today)
+    svg = build(data, logo_b64, today, repos_por_dia)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg)
     write_buttons()

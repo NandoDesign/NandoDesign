@@ -175,6 +175,32 @@
     }
     .celula { border: 0; padding: 0; }
     .celula:hover { transform: scale(1.35); box-shadow: 0 0 0 2px var(--ink); }
+    .painel { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; margin-top: 30px; }
+    .painel h4 { margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--grey); }
+    .barras { display: flex; align-items: flex-end; gap: 12px; height: 190px; padding-top: 24px; }
+    .barra { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+    .barra i {
+      display: block; width: 100%; max-width: 40px; border-radius: 8px 8px 4px 4px; background: var(--tan);
+      transform: scaleY(0); transform-origin: bottom; animation: crescer .9s cubic-bezier(.2,.8,.2,1) forwards;
+      position: relative;
+    }
+    .barra i.maximo { background: var(--ink); }
+    .barra i b {
+      position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: 700;
+      opacity: 0; animation: surgir .4s ease forwards;
+    }
+    .barra span { font-size: 12px; color: var(--grey); margin-top: 6px; }
+    @keyframes crescer { to { transform: scaleY(1); } }
+    .repo { margin-bottom: 16px; }
+    .repo .topo { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; margin-bottom: 6px; gap: 10px; }
+    .repo .topo a { color: var(--ink); text-decoration: none; word-break: break-all; }
+    .repo .topo a:hover { text-decoration: underline; }
+    .repo .topo span { color: var(--grey); font-weight: 700; white-space: nowrap; }
+    .repo .trilho { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+    .repo .preench { height: 100%; width: 0; border-radius: 4px; background: var(--tan); transition: width 1s cubic-bezier(.2,.8,.2,1); }
+    .repo .preench.ok { width: var(--p); }
+    @media (max-width: 860px) { .painel { grid-template-columns: 1fr; } }
+
     .modal-fundo {
       position: fixed; inset: 0; background: rgba(25,25,25,.4); display: flex; align-items: center;
       justify-content: center; padding: 20px; z-index: 30; animation: aparecer .2s ease;
@@ -391,6 +417,10 @@
           <i style="background:#ECECEC"></i><i style="background:#E6D9CB"></i><i style="background:#C9B29A"></i><i style="background:#A58A6E"></i><i style="background:#7A6350"></i>
           Mais</div>
       </div>
+      <div class="painel revelar">
+        <div><h4>ATIVIDADE MENSAL</h4><div class="barras" id="barras"></div></div>
+        <div><h4>REPOSITÓRIOS</h4><div id="repos"></div></div>
+      </div>
       <p class="revelar" style="margin-top:16px"><a href="https://github.com/NandoDesign" target="_blank" rel="noopener" class="ver">Ver perfil completo no GitHub →</a></p>
     </div>
   </section>
@@ -518,6 +548,57 @@
           });
           meses.style.width = (dados.semanas.length * passo) + "px";
           grade.style.width = (dados.semanas.length * passo) + "px";
+
+          // atividade mensal: barras que crescem em sequência
+          var mensal = {};
+          dados.semanas.forEach(function (s) { s.forEach(function (d) { var k = d.d.slice(0, 7); mensal[k] = (mensal[k] || 0) + d.c; }); });
+          var chaves = Object.keys(mensal).sort().slice(-12);
+          var maxv = Math.max.apply(null, chaves.map(function (k) { return mensal[k]; }).concat([1]));
+          var barras = document.getElementById("barras");
+          chaves.forEach(function (k, i) {
+            var v = mensal[k];
+            var col = document.createElement("div"); col.className = "barra";
+            var bar = document.createElement("i");
+            bar.style.height = Math.max(4, Math.round(v / maxv * 150)) + "px";
+            bar.style.animationDelay = (0.2 + i * 0.07) + "s";
+            if (v === maxv) bar.className += " maximo";
+            var rot = document.createElement("b"); rot.textContent = v;
+            rot.style.animationDelay = (0.8 + i * 0.07) + "s";
+            bar.appendChild(rot);
+            var nome = document.createElement("span");
+            nome.textContent = MESES[parseInt(k.slice(5, 7), 10) - 1];
+            col.appendChild(bar); col.appendChild(nome);
+            barras.appendChild(col);
+          });
+
+          // repositórios com commits: barras de progresso que enchem
+          var totais = {};
+          Object.keys(dados.repos || {}).forEach(function (dia) {
+            (dados.repos[dia] || []).forEach(function (r) {
+              if (!totais[r.nome]) totais[r.nome] = { commits: 0, url: r.url };
+              totais[r.nome].commits += r.commits;
+            });
+          });
+          var ranking = Object.keys(totais).map(function (n) { return [n, totais[n]]; })
+            .sort(function (a, b) { return b[1].commits - a[1].commits; }).slice(0, 5);
+          var somaRepos = ranking.reduce(function (acc, x) { return acc + x[1].commits; }, 0) || 1;
+          var lista = document.getElementById("repos");
+          ranking.forEach(function (x, i) {
+            var box = document.createElement("div"); box.className = "repo";
+            var topo = document.createElement("div"); topo.className = "topo";
+            var a = document.createElement("a");
+            a.href = /^https:\/\/github\.com\//.test(x[1].url) ? x[1].url : "https://github.com/" + x[0];
+            a.target = "_blank"; a.rel = "noopener"; a.textContent = x[0];
+            var n = document.createElement("span"); n.textContent = x[1].commits + (x[1].commits === 1 ? " commit" : " commits");
+            topo.appendChild(a); topo.appendChild(n);
+            var trilho = document.createElement("div"); trilho.className = "trilho";
+            var pre = document.createElement("div"); pre.className = "preench";
+            pre.style.setProperty("--p", (x[1].commits / somaRepos * 100).toFixed(1) + "%");
+            trilho.appendChild(pre);
+            box.appendChild(topo); box.appendChild(trilho);
+            lista.appendChild(box);
+            setTimeout(function () { pre.classList.add("ok"); }, 500 + i * 120);
+          });
 
           var rotulo = document.getElementById("mapa-titulo");
           rotulo.textContent = dados.total + " contribuições nos últimos 12 meses";
