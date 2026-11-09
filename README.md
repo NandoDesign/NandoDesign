@@ -1,125 +1,122 @@
-[# Fernando Pereira
+<div align="center">
 
-> **Software Engineering × Product Design — transformando ideias em interfaces que funcionam, comunicam e fazem sentido.**
+# Fernando Pereira
+
+### Software Engineering × Product Design
+
+**Transformando ideias em interfaces que funcionam, comunicam e fazem sentido.**
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=640&lines=Estudante+de+Engenharia+de+Software;Background+em+Design+Gr%C3%A1fico;C%C3%B3digo+bem+estruturado+%2B+pensamento+visual;Interfaces+que+fazem+sentido+para+quem+usa" alt="Typing animation" />
+
+</div>
 
 Estudante de **Engenharia de Software** com background em **Design Gráfico**, explorando a interseção entre desenvolvimento, interfaces e experiência do usuário.
 
-Meu foco é construir produtos digitais com uma combinação de **código bem estruturado, pensamento visual e atenção à experiência**.
+Meu foco é construir produtos digitais combinando **código bem estruturado**, **pensamento visual** e **atenção à experiência**.
 
 ---
 
-## `01` · Stack
+## 🛠️ Stack
 
-### Front-end
-<p align="left">
-  <img src="https://shields.io" alt="HTML5" />
-  &nbsp;
-  <img src="https://shields.io" alt="CSS3" />
-  &nbsp;
-  <img src="https://shields.io" alt="JavaScript" />
+**Front-end**
+
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
 </p>
 
-### Design & Product
-<p align="left">
-  <img src="https://shields.io" alt="Figma" />
-  &nbsp;
-  <img src="https://shields.io" alt="Illustrator" />
-  &nbsp;
-  <img src="https://shields.io" alt="Photoshop" />
-  &nbsp;
-  <img src="https://shields.io" alt="Premiere Pro" />
-  &nbsp;
-  <img src="https://shields.io" alt="After Effects" />
+**Design & Produto**
+
+<p>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
+  <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white" alt="Illustrator" />
+  <img src="https://img.shields.io/badge/Photoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white" alt="Photoshop" />
+  <img src="https://img.shields.io/badge/Premiere_Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white" alt="Premiere Pro" />
+  <img src="https://img.shields.io/badge/After_Effects-9999FF?style=for-the-badge&logo=adobeaftereffects&logoColor=white" alt="After Effects" />
 </p>
 
-### Workflow
-<p align="left">
-  <img src="https://shields.io" alt="Git" />
-  &nbsp;
-  <img src="https://shields.io" alt="GitHub" />
-  &nbsp;
-  <img src="https://shields.io" alt="VS Code" />
+**Workflow**
+
+<p>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
 </p>
 
 ---
 
-## `02` · Currently
+## 🔭 Em foco agora
 
 ```text
-Software Engineering
-        +
- Visual Design
-        ↓
-   Interfaces
-        ↓
-User Experience
-        ↓
-Digital Products
+Software Engineering  +  Visual Design
+              ↓
+          Interfaces
+              ↓
+       User Experience
+              ↓
+      Digital Products
 ```
 
-Atualmente estou aprofundando conhecimentos em:
-* Engenharia de Software & Arquitetura Clean
+* Engenharia de Software e Arquitetura Limpa
 * Organização de interfaces, UI/UX e Design de Produto
-* Versionamento semântico com Git/GitHub e desenvolvimento focado em projetos
+* Versionamento com Git/GitHub e desenvolvimento orientado a projetos
 
 ---
 
-## `03` · Selected Work
+## 📂 Projetos em destaque
 
-### 📑 [TP-2 — Curriculum Vitae](https://github.com)
-**HTML · CSS · Web Design**
-Projeto focado em desenvolvimento web fundamental, combinando estrutura HTML semântica, estilização CSS responsiva e organização visual de informações profissionais.
+**TP-2 · Curriculum Vitae** — `HTML` · `CSS` · `Web Design`
+Página de currículo com estrutura HTML semântica, estilização CSS responsiva e organização visual de informações profissionais.
 
-### 📁 [TP-1 — Web Fundamentals](https://github.com)
-**Markdown · GitHub · Web Fundamentals**
-Projeto acadêmico voltado aos fundamentos do ecossistema de desenvolvimento e utilização do GitHub, incluindo documentação técnica avançada em Markdown.
+**TP-1 · Web Fundamentals** — `Markdown` · `GitHub` · `Web`
+Projeto acadêmico sobre os fundamentos do ecossistema de desenvolvimento, do uso do GitHub e da documentação técnica em Markdown.
 
 ---
 
-## `04` · Design Approach
+## 🎯 Abordagem
 
 > **"Design defines the experience. Code makes it real."**
 
-Procuro trabalhar conectando dois universos complementares:
+Gosto de conectar dois universos complementares:
 
-* **Design:** Hierarquia visual, composição, tipografia, motion design, identidade de marca e UX.
-* **Engineering:** Estrutura de código limpa, componentização, manutenibilidade, versionamento e performance.
+* **Design:** hierarquia visual, composição, tipografia, motion design, identidade de marca e UX.
+* **Engenharia:** código limpo, componentização, manutenibilidade, versionamento e performance.
 
-O objetivo nunca é apenas fazer uma interface bonita — é fazer com que **ela funcione de forma impecável para quem a utiliza**.
+O objetivo não é só uma interface bonita, e sim uma interface que **funcione de forma impecável para quem a utiliza**.
 
 ---
 
-## `05` · Education
+## 🎓 Formação
 
 * **Bacharelado em Engenharia de Software** — PUC Minas *(2026 — 2029)*
-* **Design Gráfico & Motion** — Escola ZION *(Em andamento)*
+* **Design Gráfico & Motion** — Escola ZION *(em andamento)*
 
 ---
 
-## `06` · Let's Connect
+## 📊 GitHub em números
+
+<p align="center">
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=NandoDesign&show_icons=true&hide_border=true&theme=tokyonight" alt="Estatísticas do GitHub" />
+  <img height="180" src="https://streak-stats.demolab.com?user=NandoDesign&hide_border=true&theme=tokyonight" alt="Sequência de contribuições" />
+</p>
+
+---
+
+## 🤝 Vamos conversar
 
 Estou aberto a oportunidades, projetos colaborativos e conversas sobre tecnologia, design e produtos digitais.
 
-<p align="left">
-  <a href="https://linkedin.com" target="_blank">
-    <img src="https://shields.io" alt="LinkedIn" />
-  </a>
-  &nbsp;
-  <a href="https://behance.net" target="_blank">
-    <img src="https://shields.io" alt="Behance" />
-  </a>
-  &nbsp;
-  <a href="https://wa.me" target="_blank">
-    <img src="https://shields.io" alt="WhatsApp" />
-  </a>
-  &nbsp;
+<p align="center">
   <a href="mailto:nandopv12@gmail.com">
-    <img src="https://shields.io" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
+  <!-- LinkedIn: adicionar o link do perfil quando quiser exibir -->
+  <!-- Behance: adicionar o link do portfólio quando quiser exibir -->
 </p>
 
 ---
-<p align="right">
-  <sub>Building at the intersection of <strong>code × design × experience</strong>.</sub>
-</p>
-](https://rahuldkjain.github.io/github-profile-readme-generator/)
+
+<div align="center">
+  <sub>Building at the intersection of <b>code × design × experience</b>.</sub>
+</div>
