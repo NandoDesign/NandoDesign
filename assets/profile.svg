@@ -512,6 +512,7 @@
 <rect x="1026" y="2428" width="14" height="14" rx="3" fill="#ECECEC"><animate attributeName="fill-opacity" from="0.35" to="1" begin="1.34s" dur="0.4s" fill="freeze"/></rect>
 <rect x="1026" y="2446" width="14" height="14" rx="3" fill="#7A6350"><animate attributeName="fill-opacity" from="0.35" to="1" begin="1.34s" dur="0.4s" fill="freeze"/></rect>
 <rect x="1026" y="2464" width="14" height="14" rx="3" fill="#ECECEC"><animate attributeName="fill-opacity" from="0.35" to="1" begin="1.34s" dur="0.4s" fill="freeze"/></rect>
+<rect x="1026" y="2482" width="14" height="14" rx="3" fill="#ECECEC"><animate attributeName="fill-opacity" from="0.35" to="1" begin="1.34s" dur="0.4s" fill="freeze"/></rect>
 <text x="90" y="2580" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" fill="#707070">Menos</text>
 <rect x="136" y="2568" width="14" height="14" rx="3" fill="#ECECEC"/>
 <rect x="154" y="2568" width="14" height="14" rx="3" fill="#E6D9CB"/>
@@ -586,6 +587,6 @@
 <text x="40" y="3022" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" fill="#191919">Estou aberto a oportunidades, projetos colaborativos e conversas</text>
 <text x="40" y="3052" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" fill="#191919">sobre tecnologia, design e produtos digitais.</text>
 <line x1="0" y1="3094" x2="1200" y2="3094" stroke="#ECECEC" stroke-width="2"/>
-<text x="600.0" y="3134" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#707070">Building at the intersection of <tspan font-weight="700" fill="#191919">code × design × experience</tspan>.  ·  Atualizado automaticamente em 10/11/2026</text>
+<text x="600.0" y="3134" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#707070">Building at the intersection of <tspan font-weight="700" fill="#191919">code × design × experience</tspan>.  ·  Atualizado automaticamente em 11/11/2026</text>
 <rect x="1" y="1" width="1198" height="3162" rx="24" fill="none" stroke="#ECECEC" stroke-width="2"/>
 </svg>
